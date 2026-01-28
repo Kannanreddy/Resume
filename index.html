@@ -1,295 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kannan Reddy | Implementation Specialist & Customer Support Leader</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO -->
-  <meta name="description" content="Kannan Reddy – CRM Implementation Specialist, Customer Support Leader, Onboarding & Automation Expert">
-  <meta name="author" content="Kannan Reddy">
+<title>Kannan Reddy | Implementation & CRM Specialist</title>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="Implementation Specialist with strong system, CRM, automation and customer lifecycle expertise">
+<meta name="author" content="Kannan Reddy">
 
-  <style>
-    :root{
-      --grad1: #667eea;
-      --grad2: #764ba2;
-      --accent: #00c6ff;
-      --dark: #1f2937;
-      --light: #f9fafb;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    *{
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+:root{
+  --grad1:#2563eb;
+  --grad2:#7c3aed;
+  --accent:#06b6d4;
+  --bg:#f9fafb;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#6b7280;
+}
 
-    body{
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, var(--grad1), var(--grad2));
-      color: var(--dark);
-      line-height: 1.7;
-    }
+*{box-sizing:border-box;margin:0;padding:0}
 
-    .container{
-      max-width: 1100px;
-      margin: auto;
-      background: #fff;
-      padding: 24px;
-      border-radius: 16px;
-      margin-top: 24px;
-      margin-bottom: 24px;
-    }
+html{scroll-behavior:smooth}
 
-    header{
-      text-align: center;
-      padding-bottom: 20px;
-      border-bottom: 2px solid #e5e7eb;
-    }
+body{
+  font-family:'Inter',sans-serif;
+  background:linear-gradient(135deg,var(--grad1),var(--grad2));
+  color:var(--text);
+  line-height:1.65;
+}
 
-    header h1{
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--grad2);
-    }
+/* WRAPPER */
+.container{
+  max-width:1150px;
+  margin:20px auto;
+  background:var(--card);
+  border-radius:18px;
+  padding:30px;
+}
 
-    header p{
-      font-size: 1rem;
-      margin-top: 6px;
-    }
+/* HEADER */
+header{
+  text-align:center;
+  padding-bottom:22px;
+  border-bottom:2px solid #e5e7eb;
+}
+header h1{
+  font-size:2.3rem;
+  font-weight:700;
+  color:var(--grad1);
+}
+header p{
+  margin-top:8px;
+  font-weight:500;
+  color:#334155;
+}
 
-    .contact{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 12px;
-      font-size: 0.9rem;
-    }
+.contact{
+  margin-top:16px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:14px;
+  font-size:0.95rem;
+}
+.contact a{
+  text-decoration:none;
+  font-weight:600;
+  color:var(--grad1);
+}
 
-    .contact a{
-      text-decoration: none;
-      color: #2563eb;
-      font-weight: 500;
-    }
+/* NAV */
+nav{
+  position:sticky;
+  top:0;
+  background:var(--card);
+  padding:10px 0;
+  margin-bottom:20px;
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  z-index:10;
+}
+nav a{
+  text-decoration:none;
+  font-size:0.9rem;
+  font-weight:600;
+  color:var(--muted);
+}
+nav a:hover{color:var(--grad1)}
 
-    section{
-      margin-top: 28px;
-    }
+/* SECTIONS */
+section{margin-top:34px}
 
-    section h2{
-      font-size: 1.3rem;
-      margin-bottom: 12px;
-      color: var(--grad1);
-      border-left: 4px solid var(--accent);
-      padding-left: 10px;
-    }
+section h2{
+  font-size:1.45rem;
+  color:var(--grad1);
+  border-left:5px solid var(--accent);
+  padding-left:12px;
+  margin-bottom:18px;
+}
 
-    .job{
-      margin-bottom: 20px;
-    }
+/* CARDS */
+.card{
+  background:var(--bg);
+  border-radius:14px;
+  padding:18px;
+  margin-bottom:20px;
+}
 
-    .job h3{
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: #111827;
-    }
+/* EXPERIENCE */
+.role h3{
+  font-size:1.1rem;
+  font-weight:700;
+}
+.role span{
+  font-size:0.9rem;
+  color:var(--muted);
+}
 
-    .job span{
-      font-size: 0.9rem;
-      color: #6b7280;
-    }
+.block-title{
+  margin-top:12px;
+  font-weight:600;
+  color:#334155;
+}
 
-    ul{
-      margin-top: 8px;
-      padding-left: 18px;
-    }
+ul{
+  margin-top:6px;
+  padding-left:20px;
+}
+ul li{margin-bottom:6px}
 
-    ul li{
-      margin-bottom: 6px;
-    }
+/* SYSTEM FLOW */
+.flow{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:10px;
+}
+.flow div{
+  background:#eef2ff;
+  padding:10px 14px;
+  border-radius:10px;
+  font-size:0.85rem;
+  font-weight:600;
+}
 
-    .grid{
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-    }
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:16px;
+}
 
-    .box{
-      background: var(--light);
-      padding: 14px;
-      border-radius: 12px;
-    }
+/* FOOTER */
+footer{
+  margin-top:36px;
+  text-align:center;
+  font-size:0.85rem;
+  color:var(--muted);
+}
 
-    footer{
-      margin-top: 30px;
-      text-align: center;
-      font-size: 0.85rem;
-      color: #6b7280;
-    }
-
-    @media (max-width:600px){
-      header h1{
-        font-size: 1.6rem;
-      }
-      section h2{
-        font-size: 1.1rem;
-      }
-    }
-  </style>
+/* MOBILE */
+@media(max-width:600px){
+  header h1{font-size:1.8rem}
+  nav{flex-wrap:wrap}
+}
+@media print{
+  nav{display:none}
+  body{background:#fff}
+}
+</style>
 </head>
 
 <body>
-  <div class="container">
 
-    <header>
-      <h1>Kannan Reddy</h1>
-      <p>Implementation Specialist | Customer Support Leader | CRM & Automation Expert</p>
+<div class="container">
 
-      <div class="contact">
-        <a href="tel:+918807039877">📞 8807039877</a>
-        <a href="https://wa.me/918807039877" target="_blank">💬 WhatsApp</a>
-        <a href="mailto:mkannanreddy@gmail.com">✉️ mkannanreddy@gmail.com</a>
-        <a href="https://kannanreddy.github.io/Resume" target="_blank">🌐 Resume URL</a>
-      </div>
-    </header>
+<header>
+<h1>Kannan Reddy</h1>
+<p>Implementation Specialist | CRM | Customer Support & Automation</p>
 
-    <section>
-      <h2>Career Objective</h2>
-      <p>
-        Customer service-focused technical support specialist with experience in help desk and “break-fix” environments.
-        Highly adept in systems analysis, diagnostics, and troubleshooting.
-      </p>
-    </section>
+<div class="contact">
+<a href="tel:+918807039877">📞 8807039877</a>
+<a href="https://wa.me/918807039877">💬 WhatsApp</a>
+<a href="mailto:mkannanreddy@gmail.com">✉️ mkannanreddy@gmail.com</a>
+<a href="https://kannanreddy.github.io/Resume">🌐 Resume</a>
+</div>
+</header>
 
-    <section>
-      <h2>Professional Experience</h2>
+<nav>
+<a href="#objective">Objective</a>
+<a href="#experience">Experience</a>
+<a href="#systems">Systems</a>
+<a href="#skills">Skills</a>
+<a href="#education">Education</a>
+</nav>
 
-      <div class="job">
-        <h3>RSoft Technologies – Onboarding & Customer Support Team Head</h3>
-        <span>12/06/2023 – 03/03/2025</span>
-        <ul>
-          <li>Led the end-to-end customer onboarding process, ensuring smooth and timely transition of new clients onto the platform.</li>
-          <li>Headed the support team, assigning tasks, monitoring performance, and ensuring adherence to SLAs and quality standards.</li>
-          <li>Conducted business requirement analysis through online meetings to understand client workflows and define implementation strategies.</li>
-          <li>Oversaw software implementation, configuration, and deployment aligned with customer business processes.</li>
-          <li>Delivered online product demonstrations, training sessions, and knowledge transfers.</li>
-          <li>Managed technical support operations with effective escalation and resolution.</li>
-          <li>Supervised testing and quality assurance to ensure system stability.</li>
-          <li>Administered CRM systems including data migration and lifecycle tracking.</li>
-          <li>Implemented automation and workflow management to reduce manual effort.</li>
-          <li>Created documentation, user guides, FAQs, and training materials.</li>
-          <li>Prepared MIS and performance reports using Microsoft Excel.</li>
-          <li>Collaborated with sales, product, and development teams.</li>
-          <li>Drove continuous improvement through customer feedback.</li>
-        </ul>
-      </div>
+<section id="objective">
+<h2>Career Objective</h2>
+<p>
+Customer service-focused technical support specialist with experience in help desk and “break-fix” environments.
+Highly adept in systems analysis, diagnostics and troubleshooting.
+</p>
+</section>
 
-      <div class="job">
-        <h3>ABC Engineering Works – Site In-Charge</h3>
-        <span>29/10/2022 – 30/06/2023</span>
-        <ul>
-          <li>Managed end-to-end site operations as the authorized contract representative.</li>
-          <li>Planned skilled and unskilled manpower based on project priorities.</li>
-          <li>Handled CISF gate pass documentation and safety compliance.</li>
-          <li>Prepared and managed work permits including height and hot work.</li>
-          <li>Coordinated material procurement and store transactions.</li>
-          <li>Prepared daily, weekly, and monthly reports.</li>
-          <li>Managed billing, measurements, and invoicing coordination.</li>
-        </ul>
-      </div>
+<section id="experience">
+<h2>Professional Experience</h2>
 
-      <div class="job">
-        <h3>YuppTV Pvt Ltd – Customer Support Executive</h3>
-        <span>31/01/2019 – 30/04/2020</span>
-        <ul>
-          <li>Handled inbound and outbound international customer calls.</li>
-          <li>Resolved customer issues with high satisfaction rates.</li>
-          <li>Performed cross-sales and renewals.</li>
-          <li>CRM administration and data management.</li>
-        </ul>
-      </div>
+<div class="card role">
+<h3>RSoft Technologies – Onboarding & Customer Support Team Head</h3>
+<span>12/06/2023 – 03/03/2025</span>
 
-      <div class="job">
-        <h3>BankBazaar.com – Sr. Customer Relationship Officer</h3>
-        <span>03/09/2015 – 30/08/2018</span>
-        <ul>
-          <li>Tele-calling and fixing client meetings.</li>
-          <li>Conducted home visits and direct customer engagement.</li>
-          <li>CRM management, reporting, and sales tracking.</li>
-        </ul>
-      </div>
+<p class="block-title">Onboarding & Implementation</p>
+<ul>
+<li>Led end-to-end customer onboarding ensuring smooth platform adoption.</li>
+<li>Conducted business requirement analysis and defined implementation strategies.</li>
+<li>Oversaw system configuration, deployment, and go-live readiness.</li>
+</ul>
 
-      <div class="job">
-        <h3>Mekuba Petro Products Pvt Ltd – Marketing Executive</h3>
-        <span>01/01/2013 – 05/08/2015</span>
-        <ul>
-          <li>Lead generation through site visits and cold calling.</li>
-          <li>Client presentations, training, and live demonstrations.</li>
-          <li>Travel planning and logistics management.</li>
-          <li>Sales growth through tailored solutions.</li>
-        </ul>
-      </div>
+<p class="block-title">CRM, Automation & Support Operations</p>
+<ul>
+<li>Administered CRM systems including data migration and lifecycle tracking.</li>
+<li>Implemented workflow automation to reduce manual effort.</li>
+<li>Managed SLA-driven support operations and escalation handling.</li>
+</ul>
 
-      <div class="job">
-        <h3>Nicco Engineering Services Ltd – Sr. Technician</h3>
-        <span>11/12/2011 – 30/12/2012</span>
-        <ul>
-          <li>Belzona metal protection coatings application.</li>
-          <li>Online leak sealing and safety valve testing.</li>
-          <li>Servicing power plants and petrochemical facilities.</li>
-        </ul>
-      </div>
+<p class="block-title">Training, Documentation & Reporting</p>
+<ul>
+<li>Delivered product demos, customer training, and knowledge transfers.</li>
+<li>Created documentation, user guides, FAQs, and onboarding materials.</li>
+<li>Prepared MIS and performance reports using Microsoft Excel.</li>
+</ul>
+</div>
 
-    </section>
+<div class="card role">
+<h3>ABC Engineering Works – Site In-Charge</h3>
+<span>29/10/2022 – 30/06/2023</span>
+<ul>
+<li>Managed complete site operations, manpower planning, and safety compliance.</li>
+<li>Handled permits, CISF documentation, billing, and reporting.</li>
+</ul>
+</div>
 
-    <section>
-      <h2>Education</h2>
-      <div class="grid">
-        <div class="box">12th – Science | NIOS Board | 2019–2021 | 60%</div>
-        <div class="box">ITI – Welder | Govt ITI Guindy | 2011–2013 | 75%</div>
-        <div class="box">10th – General | NIOS Board | 2011 | 70%</div>
-      </div>
-    </section>
+<div class="card role">
+<h3>YuppTV Pvt Ltd – Customer Support Executive</h3>
+<span>31/01/2019 – 30/04/2020</span>
+<ul>
+<li>Inbound & outbound international customer support and CRM data handling.</li>
+<li>Cross-sales, renewals, and issue resolution.</li>
+</ul>
+</div>
 
-    <section>
-      <h2>Skill Set</h2>
-      <p>
-        Google Sheets & Docs, CRM Management, Communication, Data Cleaning, Direct Sales,
-        Import & Export Data, LMS, Telesales, Customer Feedback, Customer Support,
-        Online Training, Product Demonstrations, MIS, International Business,
-        IT Team Management, Process Improvement, Documentation.
-      </p>
-    </section>
+<div class="card role">
+<h3>BankBazaar.com – Sr. Customer Relationship Officer</h3>
+<span>03/09/2015 – 30/08/2018</span>
+<ul>
+<li>Tele-calling, home visits, CRM management, and sales reporting.</li>
+</ul>
+</div>
 
-    <section>
-      <h2>Personal Details</h2>
-      <p>
-        Date of Birth: 01/12/1992<br>
-        Gender: Male | Marital Status: Married<br>
-        Father Name: Subbareddy<br>
-        Languages: English, Tamil, Telugu, Hindi, Malayalam<br>
-        Alternative Phone: 9003319791
-      </p>
-    </section>
+<div class="card role">
+<h3>Mekuba Petro Products Pvt Ltd – Marketing Executive</h3>
+<span>01/01/2013 – 05/08/2015</span>
+<ul>
+<li>Lead generation, client presentations, demos, and travel coordination.</li>
+</ul>
+</div>
 
-    <section>
-      <h2>Declaration</h2>
-      <p>
-        I hereby declare that the above information is correct and true to the best of my knowledge.
-        <br><br>
-        Place: Chennai<br>
-        Name: Kannan Reddy
-      </p>
-    </section>
+<div class="card role">
+<h3>Nicco Engineering Services Limited – Sr. Technician</h3>
+<span>11/12/2011 – 30/12/2012</span>
+<ul>
+<li>Belzona coatings, leak sealing, valve testing, and plant servicing.</li>
+</ul>
+</div>
 
-    <footer>
-      © 2026 Kannan Reddy | Mobile-Optimized | GitHub Pages Ready
-    </footer>
+</section>
 
-  </div>
+<section id="systems">
+<h2>System & Delivery Approach</h2>
+<div class="flow">
+<div>Requirement Analysis</div>
+<div>Configuration</div>
+<div>Data Migration</div>
+<div>Testing (UAT)</div>
+<div>Go-Live</div>
+<div>Support & Optimization</div>
+</div>
+</section>
+
+<section id="skills">
+<h2>Skill Set</h2>
+<p>
+Google Sheets and Docs, CRM Management, Communication, Data Cleaning, Direct Sales, Import and Export Data,
+LMS, Telesales, Customer Feedback, Customer Satisfaction, Customer Support, Online Training,
+Product Demonstrations, Data Management, Microsoft Excel Formulas and Word,
+MIS, International Business, IT Team Management, Process Improvement,
+Client Relationship Management, Documentation
+</p>
+</section>
+
+<section id="education">
+<h2>Education</h2>
+<div class="grid">
+<div class="card">12th – Science Group<br>NIOS Board<br>2019–2021<br>60%</div>
+<div class="card">ITI – Welder<br>Govt ITI Guindy<br>2011–2013<br>75%</div>
+<div class="card">10th – General<br>NIOS Board<br>2011<br>70%</div>
+</div>
+</section>
+
+<section>
+<h2>Personal & Declaration</h2>
+<p>
+DOB: 01/12/1992 | Gender: Male | Marital Status: Married<br>
+Father Name: Subbareddy<br>
+Languages: English, Tamil, Telugu, Hindi, Malayalam<br>
+Alternate Phone: 9003319791<br><br>
+Note: All educational certificates are in the name of Raju Krishnaiah.<br><br>
+I hereby declare that the above information is correct and true to the best of my knowledge and belief.<br><br>
+Place: Chennai | Name: Kannan Reddy
+</p>
+</section>
+
+<footer>
+© 2026 Kannan Reddy • System-Oriented • Implementation-Focused • Mobile Ready
+</footer>
+
+</div>
 </body>
 </html>
