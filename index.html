@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kannan Reddy | Professional Resume</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>Kannan Reddy | Professional Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
     <style>
         :root {
-            --primary: #6366f1;
-            --bg: #f3f4f6;
+            --primary: #2563eb;
+            --bg: #f1f5f9;
             --card: #ffffff;
-            --text: #1f2937;
-            --text-light: #6b7280;
-            --border: #e5e7eb;
+            --text: #1e293b;
+            --text-light: #475569;
+            --border: #cbd5e1;
         }
 
         [data-theme="dark"] {
@@ -27,275 +27,245 @@
             --border: #334155;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus+Jakarta+Sans', sans-serif; }
-        body { background: var(--bg); color: var(--text); padding: 20px; transition: 0.3s; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); color: var(--text); padding: 10px; }
 
-        .container { max-width: 1000px; margin: 0 auto; }
+        .container { max-width: 900px; margin: 0 auto; }
 
-        /* Floating Controls */
-        .controls {
-            position: sticky; top: 10px; z-index: 100;
+        /* Controls */
+        .toolbar {
             display: flex; justify-content: space-between; align-items: center;
-            background: var(--card); padding: 12px 20px; border-radius: 12px;
-            margin-bottom: 20px; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            background: var(--card); padding: 10px 15px; border-radius: 8px;
+            margin-bottom: 15px; border: 1px solid var(--border);
         }
-
-        .btn-group { display: flex; gap: 10px; align-items: center; }
-        button { 
-            padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border);
-            background: var(--card); color: var(--text); cursor: pointer; font-weight: 600;
-            display: flex; align-items: center; gap: 8px; transition: 0.2s;
+        .btn { 
+            padding: 8px 12px; border-radius: 6px; cursor: pointer; font-weight: 600;
+            border: 1px solid var(--border); background: var(--card); color: var(--text);
+            display: flex; align-items: center; gap: 6px;
         }
-        button:hover { background: var(--primary); color: white; border-color: var(--primary); }
-        .color-dot { width: 18px; height: 18px; border-radius: 50%; cursor: pointer; border: 2px solid white; }
+        .btn-primary { background: var(--primary); color: white; border: none; }
 
-        /* Resume Layout */
-        #resume-content {
-            background: var(--card); border-radius: 16px; border: 1px solid var(--border);
-            overflow: hidden; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+        /* Resume Content */
+        #resume-frame {
+            background: white; border-radius: 4px; border: 1px solid var(--border);
+            box-shadow: 0 0 10px rgba(0,0,0,0.05); padding: 40px; color: #1a1a1a !important;
         }
 
         header {
-            padding: 40px; background: linear-gradient(135deg, var(--primary), #4338ca);
-            color: white; display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center;
+            display: flex; justify-content: space-between; border-bottom: 3px solid var(--primary);
+            padding-bottom: 15px; margin-bottom: 20px;
         }
-
-        .qr-box {
-            background: white; padding: 10px; border-radius: 12px;
-            width: 120px; height: 120px; display: flex; align-items: center; justify-content: center;
-        }
-
-        .contact-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px; margin-top: 20px; font-size: 0.9rem;
-        }
+        .header-text h1 { font-size: 26pt; text-transform: uppercase; color: #000; margin-bottom: 5px; }
+        .contact-info { font-size: 9pt; display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+        .qr-container { background: white; padding: 5px; border: 1px solid #ddd; border-radius: 4px; }
 
         /* Sections */
-        .main-grid { display: grid; grid-template-columns: 1fr; padding: 40px; gap: 40px; }
-        h2 { 
-            font-size: 1.4rem; color: var(--primary); margin-bottom: 20px; 
-            display: flex; align-items: center; gap: 10px; text-transform: uppercase; letter-spacing: 1px;
+        .section-title {
+            background: #f8fafc; border-left: 5px solid var(--primary);
+            padding: 5px 10px; margin: 20px 0 10px 0; font-weight: bold;
+            text-transform: uppercase; font-size: 11pt; color: var(--primary);
         }
 
-        .exp-block { margin-bottom: 30px; }
-        .exp-header { display: flex; justify-content: space-between; margin-bottom: 8px; flex-wrap: wrap; }
-        .job-title { font-weight: 800; font-size: 1.1rem; }
-        .company { color: var(--primary); font-weight: 600; }
-        .date { color: var(--text-light); font-size: 0.85rem; }
-        .exp-content { font-size: 0.95rem; color: var(--text-light); line-height: 1.6; }
-        .exp-content ul { padding-left: 20px; margin-top: 10px; }
-        .exp-content li { margin-bottom: 5px; }
+        .item { margin-bottom: 18px; line-height: 1.4; }
+        .row-meta { display: flex; flex-wrap: wrap; gap: 15px; font-size: 10pt; margin-bottom: 4px; }
+        .job-title { font-weight: 700; font-size: 11pt; display: block; margin-bottom: 2px; }
+        
+        .label { font-weight: 600; font-size: 9pt; color: #555; display: flex; align-items: center; gap: 4px; }
+        
+        .details-text { font-size: 9.5pt; text-align: justify; color: #333; }
+        .details-text ul { padding-left: 18px; margin-top: 5px; }
+        .details-text li { margin-bottom: 3px; }
 
-        .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
-        .skill-tag { 
-            background: var(--bg); padding: 6px 14px; border-radius: 20px; 
-            font-size: 0.85rem; font-weight: 600; border: 1px solid var(--border);
+        /* Skills/Languages */
+        .grid-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; font-size: 9pt; }
+        .tag { background: #eee; padding: 3px 8px; border-radius: 3px; display: inline-block; }
+
+        .edu-table { width: 100%; border-collapse: collapse; font-size: 9pt; margin-top: 5px; }
+        .edu-table th { background: #f1f5f9; text-align: left; padding: 8px; border: 1px solid #cbd5e1; }
+        .edu-table td { padding: 8px; border: 1px solid #cbd5e1; }
+
+        @media print {
+            .toolbar { display: none; }
+            body { background: white; padding: 0; }
+            #resume-frame { border: none; box-shadow: none; padding: 0; width: 100%; }
         }
-
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th { text-align: left; padding: 12px; color: var(--text-light); font-size: 0.8rem; border-bottom: 2px solid var(--border); }
-        td { padding: 12px; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
-
-        .footer-note { padding: 20px 40px; font-size: 0.8rem; color: var(--text-light); font-style: italic; border-top: 1px solid var(--border); }
-
-        @media print { .controls { display: none; } }
     </style>
 </head>
 <body data-theme="light">
 
 <div class="container">
-    <div class="controls">
-        <div class="btn-group">
-            <div class="color-dot" style="background: #6366f1;" onclick="setThemeColor('#6366f1')"></div>
-            <div class="color-dot" style="background: #0ea5e9;" onclick="setThemeColor('#0ea5e9')"></div>
-            <div class="color-dot" style="background: #10b981;" onclick="setThemeColor('#10b981')"></div>
-            <button onclick="toggleTheme()"><i class="fas fa-adjust"></i> Mode</button>
+    <div class="toolbar">
+        <div style="display: flex; gap: 10px;">
+            <button class="btn" onclick="toggleTheme()"><i class="fas fa-moon"></i> Theme</button>
+            <div style="display: flex; align-items: center; gap: 5px; border: 1px solid #ddd; padding: 2px 8px; border-radius: 6px;">
+                <div style="width:15px; height:15px; background:#2563eb; cursor:pointer;" onclick="changeColor('#2563eb')"></div>
+                <div style="width:15px; height:15px; background:#16a34a; cursor:pointer;" onclick="changeColor('#16a34a')"></div>
+                <div style="width:15px; height:15px; background:#dc2626; cursor:pointer;" onclick="changeColor('#dc2626')"></div>
+            </div>
         </div>
-        <button onclick="downloadPDF()" style="background: var(--primary); color: white;">
-            <i class="fas fa-download"></i> Download PDF
-        </button>
+        <button class="btn btn-primary" onclick="downloadPDF()"><i class="fas fa-file-pdf"></i> Download PDF</button>
     </div>
 
-    <div id="resume-content">
+    <div id="resume-frame">
         <header>
-            <div>
-                <h1 style="font-size: 2.8rem;">KANNAN REDDY</h1>
-                <p style="font-size: 1.1rem; opacity: 0.9; margin-top: 5px;">Customer Service-Focused Technical Support Specialist</p>
-                <div class="contact-grid">
+            <div class="header-text">
+                <h1>KANNAN REDDY</h1>
+                <div class="contact-info">
                     <span><i class="fas fa-envelope"></i> mkannanreddy@gmail.com</span>
-                    <span><i class="fas fa-phone"></i> 8807039877</span>
-                    <span><i class="fab fa-whatsapp"></i> 8807039877</span>
-                    <span><i class="fas fa-map-marker-alt"></i> Chennai, Tamil Nadu</span>
+                    <span><i class="fas fa-phone"></i> +91 8807039877</span>
+                    <span><i class="fab fa-whatsapp"></i> +91 8807039877</span>
+                    <span><i class="fas fa-location-dot"></i> Chennai, Tamil Nadu</span>
                 </div>
             </div>
-            <div class="qr-box" id="qrcode" title="Scan to visit my online resume"></div>
+            <div class="qr-container" id="qrcode"></div>
         </header>
 
-        <div class="main-grid">
-            <section>
-                <h2><i class="fas fa-user"></i> Career Objective</h2>
-                <p class="exp-content">Customer service-focused technical support specialist with experience in help desk and “break-fix” environments. Highly adept in systems analysis, diagnostics and troubleshooting.</p>
-            </section>
+        <div class="section-title">Career Objective</div>
+        <p class="details-text" style="padding: 0 10px;">
+            Customer service-focused technical support specialist with experience in help desk and “break-fix” environments. Highly adept in systems analysis, diagnostics and troubleshooting.
+        </p>
 
-            <section>
-                <h2><i class="fas fa-briefcase"></i> Experience</h2>
+        <div class="section-title">Work Experience</div>
 
-                <div class="exp-block">
-                    <div class="exp-header">
-                        <span class="job-title">Onboarding & Customer Support Team Head</span>
-                        <span class="date">12/06/2023 - 03/03/2025</span>
-                    </div>
-                    <div class="company">RSoft Technologies</div>
-                    <div class="exp-content">
-                        <ul>
-                            <li>Led the end-to-end customer onboarding process, ensuring smooth and timely transition of new clients onto the platform.</li>
-                            <li>Headed the support team, assigning tasks, monitoring performance, and ensuring adherence to SLAs and quality standards.</li>
-                            <li>Conducted business requirement analysis through online meetings to understand client workflows and define implementation strategies.</li>
-                            <li>Oversaw software implementation, configuration, and deployment in alignment with customer business processes.</li>
-                            <li>Delivered online product demonstrations, training sessions, and knowledge transfers to customers and internal teams.</li>
-                            <li>Managed technical support operations, ensuring quick issue identification, escalation, and resolution.</li>
-                            <li>Supervised testing and quality assurance activities to validate system stability and functionality.</li>
-                            <li>Administered CRM systems, including customer data management, data migration, and lifecycle tracking.</li>
-                            <li>Implemented automation and workflow management to improve support efficiency and reduce manual effort.</li>
-                            <li>Created and maintained documentation, user guides, FAQs, and training materials for onboarding and support processes.</li>
-                            <li>Analyzed support data and prepared reports using Microsoft Excel to track performance, issues, and customer trends.</li>
-                            <li>Collaborated closely with cross-functional teams (sales, product, development) to ensure seamless customer experience.</li>
-                            <li>Applied strong problem-solving and critical-thinking skills to resolve complex customer issues.</li>
-                            <li>Gathered customer feedback and drove continuous process improvement initiatives to enhance customer satisfaction and retention.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="exp-block">
-                    <div class="exp-header">
-                        <span class="job-title">Site In-Charge</span>
-                        <span class="date">29 Oct 2022 – 30 Jun 2023</span>
-                    </div>
-                    <div class="company">ABC Engineering Works</div>
-                    <div class="exp-content">
-                        <ul>
-                            <li>Managed end-to-end site operations as the authorized representative for the entire contract.</li>
-                            <li>Planned and arranged skilled and unskilled manpower based on project priorities and site requirements.</li>
-                            <li>Handled CISF gate pass documentation, complete medical, safety compliance, and CLIMS/portal submissions.</li>
-                            <li>Interpreted work requirements and executed task planning based on urgency and safety standards.</li>
-                            <li>Prepared and managed work permits including height work, hot work (fire), oil handling, and other critical scenarios.</li>
-                            <li>Coordinated material and tool procurement, purchase requests, and store transactions.</li>
-                            <li>Ensured effective manpower utilization to meet timelines and productivity targets.</li>
-                            <li>Prepared daily, weekly, and monthly reports, including progress tracking and documentation.</li>
-                            <li>Managed billing processes, measurements, and coordination with accounts for timely invoicing.</li>
-                            <li>Ensured compliance with site safety, quality, and contractual obligations.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="exp-block">
-                    <div class="exp-header">
-                        <span class="job-title">Customer Support Executive</span>
-                        <span class="date">31/01/2019 - 30/04/2020</span>
-                    </div>
-                    <div class="company">Yupp Tv Pvt Ltd</div>
-                    <p class="exp-content">Experienced in managing raw data and handling both inbound and outbound calls, including international calling. Skilled in capturing and resolving customer issues efficiently, ensuring high levels of customer satisfaction. Proficient in performing cross-sales and renewals, contributing to business growth. Demonstrates strong team management abilities, effectively leading and coordinating team efforts. Adept at CRM administration and data management, maintaining accurate and up-to-date customer information. Possesses excellent communication skills, excelling in customer service and sales. Expertise in CRM management ensures streamlined processes and enhanced client relationships.</p>
-                </div>
-
-                <div class="exp-block">
-                    <div class="exp-header">
-                        <span class="job-title">Sr. Customer Relationship Officer</span>
-                        <span class="date">03/09/2015 - 30/08/2018</span>
-                    </div>
-                    <div class="company">Bank Bazaar.com</div>
-                    <p class="exp-content">Experienced in tele calling to disseminate product information and fix meetings with potential clients. Proficient in performing home visits to engage with customers directly and develop tailored sales strategies. Skilled in managing customer relationship management (CRM) systems to maintain and enhance client relationships. Adept at generating data entry and producing detailed reports to track sales performance and customer interactions. Demonstrates strong communication skills, ensuring clear and effective information exchange. Excels in sales, leveraging strategies and insights to drive business growth and achieve targets.</p>
-                </div>
-
-                <div class="exp-block">
-                    <div class="exp-header">
-                        <span class="job-title">Marketing Executive</span>
-                        <span class="date">01/01/2013 - 05/08/2015</span>
-                    </div>
-                    <div class="company">Mekuba Petro Products Pvt Ltd</div>
-                    <p class="exp-content">Proficient in generating leads through various strategic approaches, including direct site visits, cold calling, and appointment setting. Adept at identifying and cultivating new business opportunities through proactive outreach and relationship-building efforts. Experienced in delivering persuasive presentations and comprehensive training programs to clients and stakeholders. Conducts live demonstrations to showcase the features and benefits of offerings, enhancing client understanding and engagement. Excels in sales activities, leveraging strong communication and negotiation skills to drive revenue growth and achieve sales targets.</p>
-                </div>
-
-                <div class="exp-block">
-                    <div class="exp-header">
-                        <span class="job-title">Sr. Technician</span>
-                        <span class="date">11/12/2011 - 30/12/2012</span>
-                    </div>
-                    <div class="company">Nicco Engineering Services Limited</div>
-                    <p class="exp-content">Specialized in the application of Belzona metal protection coatings, ensuring high-quality and durable results. Responsibilities included managing travel logistics, tool preparation, and conducting online leak sealing. Performed safety valve testing to guarantee the operational integrity of critical components. Involved in servicing power plants and petrochemical facilities, applying technical skills to maintain and enhance efficiency and safety.</p>
-                </div>
-            </section>
-
-            <section>
-                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Qualification</th>
-                            <th>Institute</th>
-                            <th>Year</th>
-                            <th>%</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>12th Science</td><td>NIOS Board</td><td>2021</td><td>60%</td></tr>
-                        <tr><td>ITI Welder</td><td>Govt ITI Guindy</td><td>2013</td><td>75%</td></tr>
-                        <tr><td>10th General</td><td>NIOS Board</td><td>2011</td><td>70%</td></tr>
-                    </tbody>
-                </table>
-            </section>
-
-            <section>
-                <h2><i class="fas fa-star"></i> Skillset</h2>
-                <div class="skills-grid">
-                    <span class="skill-tag">Google Sheets & Docs</span>
-                    <span class="skill-tag">CRM Management</span>
-                    <span class="skill-tag">Data Cleaning</span>
-                    <span class="skill-tag">International Business</span>
-                    <span class="skill-tag">MIS Reporting</span>
-                    <span class="skill-tag">Process Improvement</span>
-                    <span class="skill-tag">Web App Script</span>
-                    <span class="skill-tag">LMS Administration</span>
-                </div>
-            </section>
+        <div class="item">
+            <span class="job-title">Onboarding & Customer Support Team Head</span>
+            <div class="row-meta">
+                <span class="label">🏢 Organization: <span style="font-weight:400">RSoft Technologies</span></span>
+                <span class="label">📅 Period: <span style="font-weight:400">12/06/2023 - 03/03/2025</span></span>
+            </div>
+            <div class="label" style="margin-top:5px;">📝 Details:</div>
+            <div class="details-text">
+                <ul>
+                    <li>Led the end-to-end customer onboarding process, ensuring smooth and timely transition of new clients onto the platform.</li>
+                    <li>Headed the support team, assigning tasks, monitoring performance, and ensuring adherence to SLAs and quality standards.</li>
+                    <li>Conducted business requirement analysis through online meetings to understand client workflows.</li>
+                    <li>Oversaw software implementation, configuration, and deployment in alignment with customer business processes.</li>
+                    <li>Delivered online product demonstrations, training sessions, and knowledge transfers.</li>
+                    <li>Managed technical support operations, ensuring quick issue identification, escalation, and resolution.</li>
+                    <li>Administered CRM systems, including customer data management, data migration, and lifecycle tracking.</li>
+                    <li>Implemented automation and workflow management to improve support efficiency.</li>
+                </ul>
+            </div>
         </div>
 
-        <div class="footer-note">
-            Note: All educational certificates are in the name of Raju Krishnaiah. I hereby declare that the above information is correct and true.
-            <br>Place: Chennai | Name: Kannan Reddy
+        <div class="item">
+            <span class="job-title">Site In-Charge</span>
+            <div class="row-meta">
+                <span class="label">🏢 Organization: <span style="font-weight:400">ABC Engineering Works</span></span>
+                <span class="label">📅 Period: <span style="font-weight:400">29 Oct 2022 – 30 Jun 2023</span></span>
+            </div>
+            <div class="label" style="margin-top:5px;">📝 Details:</div>
+            <div class="details-text">
+                <ul>
+                    <li>Managed end-to-end site operations as the authorized representative.</li>
+                    <li>Planned and arranged skilled and unskilled manpower based on project priorities.</li>
+                    <li>Handled CISF gate pass documentation, medical, safety compliance, and portal submissions.</li>
+                    <li>Prepared and managed work permits including height work, hot work (fire), and oil handling.</li>
+                    <li>Managed billing processes, measurements, and coordination with accounts.</li>
+                </ul>
+            </div>
         </div>
+
+        <div class="item">
+            <span class="job-title">Customer Support Executive</span>
+            <div class="row-meta">
+                <span class="label">🏢 Organization: <span style="font-weight:400">Yupp Tv Pvt Ltd</span></span>
+                <span class="label">📅 Period: <span style="font-weight:400">31/01/2019 - 30/04/2020</span></span>
+            </div>
+            <div class="label" style="margin-top:5px;">📝 Details:</div>
+            <div class="details-text">
+                Experienced in managing raw data and handling both inbound and outbound calls, including international calling. Skilled in resolving customer issues efficiently, performing cross-sales and renewals. Adept at CRM administration and data management.
+            </div>
+        </div>
+
+        <div class="item">
+            <span class="job-title">Sr. Customer Relationship Officer</span>
+            <div class="row-meta">
+                <span class="label">🏢 Organization: <span style="font-weight:400">Bank Bazaar.com</span></span>
+                <span class="label">📅 Period: <span style="font-weight:400">03/09/2015 - 30/08/2018</span></span>
+            </div>
+            <div class="label" style="margin-top:5px;">📝 Details:</div>
+            <div class="details-text">
+                Proficient in tele-calling and performing home visits to engage with customers. Skilled in managing CRM systems, generating data entry, and producing detailed reports to track sales performance.
+            </div>
+        </div>
+
+        <div class="section-title">Education</div>
+        <table class="edu-table">
+            <tr>
+                <th>Course</th>
+                <th>Institute</th>
+                <th>Year</th>
+                <th>%</th>
+            </tr>
+            <tr>
+                <td>12th Science</td>
+                <td>NIOS Board</td>
+                <td>2021</td>
+                <td>60%</td>
+            </tr>
+            <tr>
+                <td>ITI Welder</td>
+                <td>Govt ITI Guindy</td>
+                <td>2013</td>
+                <td>75%</td>
+            </tr>
+        </table>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div>
+                <div class="section-title">Skillset</div>
+                <div class="grid-list">
+                    <span class="tag">Google Sheets</span>
+                    <span class="tag">CRM Management</span>
+                    <span class="tag">Data Cleaning</span>
+                    <span class="tag">Telesales</span>
+                    <span class="tag">Web App Script</span>
+                    <span class="tag">MIS Reporting</span>
+                </div>
+            </div>
+            <div>
+                <div class="section-title">Languages</div>
+                <div class="grid-list">
+                    <span class="tag">Tamil</span>
+                    <span class="tag">Telugu</span>
+                    <span class="tag">Hindi</span>
+                    <span class="tag">English</span>
+                    <span class="tag">Malayalam</span>
+                </div>
+            </div>
+        </div>
+
+        <p style="font-size: 8pt; color: #777; margin-top: 30px; border-top: 1px dashed #ccc; padding-top: 10px;">
+            Note: All educational certificates are in the name of Raju Krishnaiah. | Place: Chennai | Name: Kannan Reddy
+        </p>
     </div>
 </div>
 
 <script>
-    // Generate QR Code
+    // QR Generation
     new QRCode(document.getElementById("qrcode"), {
         text: "https://kannanreddy.github.io/Resume",
-        width: 100,
-        height: 100,
-        colorDark : "#000000",
-        colorLight : "#ffffff",
-        correctLevel : QRCode.CorrectLevel.H
+        width: 80,
+        height: 80
     });
 
-    // Theme Logic
     function toggleTheme() {
-        const body = document.body;
-        body.setAttribute('data-theme', body.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
+        document.body.setAttribute('data-theme', document.body.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
     }
 
-    function setThemeColor(color) {
+    function changeColor(color) {
         document.documentElement.style.setProperty('--primary', color);
     }
 
-    // Download Logic
     function downloadPDF() {
-        const element = document.getElementById('resume-content');
+        const element = document.getElementById('resume-frame');
         const opt = {
-            margin: 0,
+            margin: 0.2,
             filename: 'Kannan_Reddy_Resume.pdf',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2, useCORS: true },
-            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            image: { type: 'jpeg', quality: 1 },
+            html2canvas: { scale: 3, useCORS: true },
+            jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
         };
         html2pdf().set(opt).from(element).save();
     }
