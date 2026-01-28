@@ -1,272 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Kannan Reddy | Implementation & CRM Specialist</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Senior Implementation Specialist with CRM, Customer Support, Automation & Onboarding expertise">
-<meta name="author" content="Kannan Reddy">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kannan Reddy | Implementation Specialist & Customer Support Leader</title>
 
-<style>
-:root{
- --bg:#f8fafc;
- --card:#ffffff;
- --text:#0f172a;
- --muted:#64748b;
- --primary:#2563eb;
- --secondary:#1e40af;
- --accent:#22c55e;
- --grad:linear-gradient(135deg,var(--primary),var(--secondary));
-}
+  <!-- SEO -->
+  <meta name="description" content="Kannan Reddy – CRM Implementation Specialist, Customer Support Leader, Onboarding & Automation Expert">
+  <meta name="author" content="Kannan Reddy">
 
-/* THEME PRESETS */
-[data-theme="teal"]{--primary:#0d9488;--secondary:#0f766e}
-[data-theme="purple"]{--primary:#7c3aed;--secondary:#5b21b6}
-[data-theme="dark"]{
- --bg:#020617;
- --card:#020617;
- --text:#e5e7eb;
- --muted:#94a3b8;
-}
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-*{box-sizing:border-box;font-family:system-ui,Segoe UI,Roboto}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);line-height:1.6}
-a{text-decoration:none;color:inherit}
+  <style>
+    :root{
+      --grad1: #667eea;
+      --grad2: #764ba2;
+      --accent: #00c6ff;
+      --dark: #1f2937;
+      --light: #f9fafb;
+    }
 
-/* NAV */
-nav{
- position:sticky;top:0;z-index:50;
- background:var(--card);
- padding:14px 18px;
- display:flex;justify-content:space-between;align-items:center;
- box-shadow:0 6px 18px rgba(0,0,0,.15)
-}
-nav b{color:var(--primary);font-size:18px}
-nav a{margin-left:12px;font-weight:600;color:var(--muted)}
-.controls span{cursor:pointer;margin-left:10px}
+    *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* HERO */
-header{
- padding:60px 16px;text-align:center;
- background:var(--grad);
- color:#fff
-}
-header h1{margin:0;font-size:32px}
-header p{opacity:.95}
+    body{
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, var(--grad1), var(--grad2));
+      color: var(--dark);
+      line-height: 1.7;
+    }
 
-/* BUTTONS */
-.btns{margin-top:18px}
-.btn{
- display:inline-block;margin:6px;padding:12px 18px;
- border-radius:28px;font-weight:700;
- background:#fff;color:var(--primary)
-}
-.btn.alt{background:var(--accent);color:#fff}
+    .container{
+      max-width: 1100px;
+      margin: auto;
+      background: #fff;
+      padding: 24px;
+      border-radius: 16px;
+      margin-top: 24px;
+      margin-bottom: 24px;
+    }
 
-/* SECTIONS */
-section{max-width:1100px;margin:auto;padding:22px 16px}
-.card{
- background:var(--card);
- border-radius:18px;
- padding:22px;
- margin-bottom:22px;
- box-shadow:0 10px 25px rgba(0,0,0,.15);
- animation:fade .6s ease both
-}
-h2{color:var(--primary);margin-top:0}
-h3{margin-bottom:4px}
-span{color:var(--muted);font-size:14px}
+    header{
+      text-align: center;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #e5e7eb;
+    }
 
-/* TIMELINE */
-.timeline{border-left:3px solid var(--primary);padding-left:18px}
-.timeline div{margin-bottom:18px}
+    header h1{
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--grad2);
+    }
 
-/* SKILLS */
-.badge{
- display:inline-block;
- background:rgba(37,99,235,.15);
- padding:8px 14px;
- border-radius:20px;
- margin:5px;font-size:14px
-}
+    header p{
+      font-size: 1rem;
+      margin-top: 6px;
+    }
 
-/* FLOATING ACTIONS */
-.fab{
- position:fixed;right:16px;bottom:16px;
- display:flex;flex-direction:column;gap:10px;z-index:99
-}
-.fab a{
- width:52px;height:52px;border-radius:50%;
- display:flex;align-items:center;justify-content:center;
- background:var(--primary);color:#fff;font-size:22px;
- box-shadow:0 6px 18px rgba(0,0,0,.35)
-}
+    .contact{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 12px;
+      font-size: 0.9rem;
+    }
 
-/* QR */
-.qr{text-align:center}
-.qr img{width:140px}
+    .contact a{
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: 500;
+    }
 
-/* FOOTER */
-footer{text-align:center;padding:20px;color:var(--muted)}
+    section{
+      margin-top: 28px;
+    }
 
-/* MOBILE */
-@media(max-width:600px){
- nav a{display:none}
- header h1{font-size:26px}
-}
+    section h2{
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: var(--grad1);
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+    }
 
-/* PRINT */
-@media print{
- nav,.btns,.fab,.controls{display:none}
- body{background:#fff}
- .card{box-shadow:none}
-}
+    .job{
+      margin-bottom: 20px;
+    }
 
-/* ANIM */
-@keyframes fade{
- from{opacity:0;transform:translateY(20px)}
- to{opacity:1;transform:none}
-}
-</style>
+    .job h3{
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .job span{
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    ul{
+      margin-top: 8px;
+      padding-left: 18px;
+    }
+
+    ul li{
+      margin-bottom: 6px;
+    }
+
+    .grid{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .box{
+      background: var(--light);
+      padding: 14px;
+      border-radius: 12px;
+    }
+
+    footer{
+      margin-top: 30px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
+    @media (max-width:600px){
+      header h1{
+        font-size: 1.6rem;
+      }
+      section h2{
+        font-size: 1.1rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <div class="container">
 
-<nav>
- <b>Kannan Reddy</b>
- <div class="controls">
-  <a href="#experience">Experience</a>
-  <a href="#skills">Skills</a>
-  <a href="#education">Education</a>
-  <span onclick="setTheme('')">🎨</span>
-  <span onclick="setTheme('teal')">🟢</span>
-  <span onclick="setTheme('purple')">🟣</span>
-  <span onclick="setTheme('dark')">🌙</span>
- </div>
-</nav>
+    <header>
+      <h1>Kannan Reddy</h1>
+      <p>Implementation Specialist | Customer Support Leader | CRM & Automation Expert</p>
 
-<header>
- <h1>Kannan Reddy</h1>
- <p>Implementation Specialist | CRM & Customer Support Leader</p>
- <div class="btns">
-  <a class="btn alt" href="https://wa.me/918807039877">WhatsApp</a>
-  <a class="btn" href="mailto:mkannanreddy@gmail.com">Email</a>
-  <a class="btn" onclick="window.print()">Download PDF</a>
- </div>
-</header>
+      <div class="contact">
+        <a href="tel:+918807039877">📞 8807039877</a>
+        <a href="https://wa.me/918807039877" target="_blank">💬 WhatsApp</a>
+        <a href="mailto:mkannanreddy@gmail.com">✉️ mkannanreddy@gmail.com</a>
+        <a href="https://kannanreddy.github.io/Resume" target="_blank">🌐 Resume URL</a>
+      </div>
+    </header>
 
-<section>
+    <section>
+      <h2>Career Objective</h2>
+      <p>
+        Customer service-focused technical support specialist with experience in help desk and “break-fix” environments.
+        Highly adept in systems analysis, diagnostics, and troubleshooting.
+      </p>
+    </section>
 
-<div class="card">
-<h2>Career Objective</h2>
-<p>
-Customer service–focused Technical Support and Implementation Specialist with extensive experience in help desk operations, CRM administration, automation, diagnostics, troubleshooting, onboarding, training, and SLA-driven support. Proven leader in process improvement and cross-functional collaboration.
-</p>
-</div>
+    <section>
+      <h2>Professional Experience</h2>
 
-<div class="card timeline" id="experience">
-<h2>Professional Experience</h2>
+      <div class="job">
+        <h3>RSoft Technologies – Onboarding & Customer Support Team Head</h3>
+        <span>12/06/2023 – 03/03/2025</span>
+        <ul>
+          <li>Led the end-to-end customer onboarding process, ensuring smooth and timely transition of new clients onto the platform.</li>
+          <li>Headed the support team, assigning tasks, monitoring performance, and ensuring adherence to SLAs and quality standards.</li>
+          <li>Conducted business requirement analysis through online meetings to understand client workflows and define implementation strategies.</li>
+          <li>Oversaw software implementation, configuration, and deployment aligned with customer business processes.</li>
+          <li>Delivered online product demonstrations, training sessions, and knowledge transfers.</li>
+          <li>Managed technical support operations with effective escalation and resolution.</li>
+          <li>Supervised testing and quality assurance to ensure system stability.</li>
+          <li>Administered CRM systems including data migration and lifecycle tracking.</li>
+          <li>Implemented automation and workflow management to reduce manual effort.</li>
+          <li>Created documentation, user guides, FAQs, and training materials.</li>
+          <li>Prepared MIS and performance reports using Microsoft Excel.</li>
+          <li>Collaborated with sales, product, and development teams.</li>
+          <li>Drove continuous improvement through customer feedback.</li>
+        </ul>
+      </div>
 
-<div>
-<h3>RSoft Technologies – Onboarding & Customer Support Team Head</h3>
-<span>Dec 2023 – Mar 2025</span>
-<ul>
-<li>Led end-to-end onboarding, CRM implementation, and automation</li>
-<li>Managed SLAs, escalations, QA, MIS reporting, and documentation</li>
-<li>Delivered training, demos, and cross-team coordination</li>
-</ul>
-</div>
+      <div class="job">
+        <h3>ABC Engineering Works – Site In-Charge</h3>
+        <span>29/10/2022 – 30/06/2023</span>
+        <ul>
+          <li>Managed end-to-end site operations as the authorized contract representative.</li>
+          <li>Planned skilled and unskilled manpower based on project priorities.</li>
+          <li>Handled CISF gate pass documentation and safety compliance.</li>
+          <li>Prepared and managed work permits including height and hot work.</li>
+          <li>Coordinated material procurement and store transactions.</li>
+          <li>Prepared daily, weekly, and monthly reports.</li>
+          <li>Managed billing, measurements, and invoicing coordination.</li>
+        </ul>
+      </div>
 
-<div>
-<h3>ABC Engineering Works – Site In-Charge</h3>
-<span>Oct 2022 – Jun 2023</span>
-<ul>
-<li>Manpower planning, safety permits, billing & compliance</li>
-</ul>
-</div>
+      <div class="job">
+        <h3>YuppTV Pvt Ltd – Customer Support Executive</h3>
+        <span>31/01/2019 – 30/04/2020</span>
+        <ul>
+          <li>Handled inbound and outbound international customer calls.</li>
+          <li>Resolved customer issues with high satisfaction rates.</li>
+          <li>Performed cross-sales and renewals.</li>
+          <li>CRM administration and data management.</li>
+        </ul>
+      </div>
 
-<div>
-<h3>YuppTV Pvt Ltd – Customer Support Executive</h3>
-<span>Jan 2019 – Apr 2020</span>
-<ul>
-<li>International support calls, CRM handling, renewals</li>
-</ul>
-</div>
+      <div class="job">
+        <h3>BankBazaar.com – Sr. Customer Relationship Officer</h3>
+        <span>03/09/2015 – 30/08/2018</span>
+        <ul>
+          <li>Tele-calling and fixing client meetings.</li>
+          <li>Conducted home visits and direct customer engagement.</li>
+          <li>CRM management, reporting, and sales tracking.</li>
+        </ul>
+      </div>
 
-<div>
-<h3>BankBazaar – Senior Customer Relationship Officer</h3>
-<span>Sep 2015 – Aug 2018</span>
-<ul>
-<li>Customer acquisition, CRM, MIS reporting</li>
-</ul>
-</div>
+      <div class="job">
+        <h3>Mekuba Petro Products Pvt Ltd – Marketing Executive</h3>
+        <span>01/01/2013 – 05/08/2015</span>
+        <ul>
+          <li>Lead generation through site visits and cold calling.</li>
+          <li>Client presentations, training, and live demonstrations.</li>
+          <li>Travel planning and logistics management.</li>
+          <li>Sales growth through tailored solutions.</li>
+        </ul>
+      </div>
 
-<div>
-<h3>Mekuba Petro Products – Marketing Executive</h3>
-<span>Jan 2013 – Aug 2015</span>
-<ul>
-<li>Lead generation, demos, sales execution</li>
-</ul>
-</div>
+      <div class="job">
+        <h3>Nicco Engineering Services Ltd – Sr. Technician</h3>
+        <span>11/12/2011 – 30/12/2012</span>
+        <ul>
+          <li>Belzona metal protection coatings application.</li>
+          <li>Online leak sealing and safety valve testing.</li>
+          <li>Servicing power plants and petrochemical facilities.</li>
+        </ul>
+      </div>
 
-<div>
-<h3>Nicco Engineering Services – Senior Technician</h3>
-<span>Dec 2011 – Dec 2012</span>
-<ul>
-<li>Belzona coating, leak sealing, valve testing</li>
-</ul>
-</div>
-</div>
+    </section>
 
-<div class="card" id="skills">
-<h2>Skill Set</h2>
-<span class="badge">CRM Management</span>
-<span class="badge">Implementation</span>
-<span class="badge">Automation</span>
-<span class="badge">Customer Support</span>
-<span class="badge">Excel & MIS</span>
-<span class="badge">Documentation</span>
-<span class="badge">Leadership</span>
-</div>
+    <section>
+      <h2>Education</h2>
+      <div class="grid">
+        <div class="box">12th – Science | NIOS Board | 2019–2021 | 60%</div>
+        <div class="box">ITI – Welder | Govt ITI Guindy | 2011–2013 | 75%</div>
+        <div class="box">10th – General | NIOS Board | 2011 | 70%</div>
+      </div>
+    </section>
 
-<div class="card" id="education">
-<h2>Education</h2>
-<p><b>12th – Science</b> | NIOS Board | 60%</p>
-<p><b>ITI – Welder</b> | Govt ITI Guindy | 75%</p>
-<p><b>10th – General</b> | NIOS Board | 70%</p>
-</div>
+    <section>
+      <h2>Skill Set</h2>
+      <p>
+        Google Sheets & Docs, CRM Management, Communication, Data Cleaning, Direct Sales,
+        Import & Export Data, LMS, Telesales, Customer Feedback, Customer Support,
+        Online Training, Product Demonstrations, MIS, International Business,
+        IT Team Management, Process Improvement, Documentation.
+      </p>
+    </section>
 
-<div class="card qr">
-<h2>Resume QR Code</h2>
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://kannanreddy.github.io/Resume">
-<p>Scan to open resume</p>
-</div>
+    <section>
+      <h2>Personal Details</h2>
+      <p>
+        Date of Birth: 01/12/1992<br>
+        Gender: Male | Marital Status: Married<br>
+        Father Name: Subbareddy<br>
+        Languages: English, Tamil, Telugu, Hindi, Malayalam<br>
+        Alternative Phone: 9003319791
+      </p>
+    </section>
 
-<div class="card">
-<h2>Declaration</h2>
-<p>I hereby declare that the above information is true to the best of my knowledge.</p>
-<p><b>Place:</b> Chennai &nbsp; <b>Name:</b> Kannan Reddy</p>
-<p><small>Note: Educational certificates are in the name of Raju Krishnaiah</small></p>
-</div>
+    <section>
+      <h2>Declaration</h2>
+      <p>
+        I hereby declare that the above information is correct and true to the best of my knowledge.
+        <br><br>
+        Place: Chennai<br>
+        Name: Kannan Reddy
+      </p>
+    </section>
 
-</section>
+    <footer>
+      © 2026 Kannan Reddy | Mobile-Optimized | GitHub Pages Ready
+    </footer>
 
-<div class="fab">
- <a href="tel:+918807039877">📞</a>
- <a href="mailto:mkannanreddy@gmail.com">✉️</a>
- <a href="https://wa.me/918807039877">💬</a>
-</div>
-
-<footer>
-© 2026 Kannan Reddy | Architect-grade Resume
-</footer>
-
-<script>
-function setTheme(t){
- document.body.dataset.theme = t;
-}
-</script>
-
+  </div>
 </body>
 </html>
