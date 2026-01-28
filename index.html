@@ -4,265 +4,316 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kannan Reddy | Professional Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
     <style>
         :root {
-            --primary: #2563eb;
-            --bg: #f1f5f9;
-            --card: #ffffff;
-            --text: #1e293b;
-            --text-light: #475569;
-            --border: #cbd5e1;
+            --primary: #4f46e5;
+            --primary-glow: rgba(79, 70, 229, 0.15);
+            --bg: #fdfeff;
+            --surface: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border: #e2e8f0;
+            --radius: 12px;
         }
 
         [data-theme="dark"] {
-            --bg: #0f172a;
-            --card: #1e293b;
-            --text: #f8fafc;
-            --text-light: #94a3b8;
-            --border: #334155;
+            --bg: #020617;
+            --surface: #0f172a;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #1e293b;
+            --primary-glow: rgba(99, 102, 241, 0.2);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); color: var(--text); padding: 10px; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: var(--bg); 
+            color: var(--text-main);
+            transition: all 0.3s ease;
+            line-height: 1.6;
+        }
 
-        .container { max-width: 900px; margin: 0 auto; }
+        .app-shell { max-width: 1100px; margin: 20px auto; padding: 0 15px; }
 
-        /* Controls */
-        .toolbar {
+        /* --- UI Controls --- */
+        .glass-nav {
+            position: sticky; top: 15px; z-index: 100;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            padding: 12px 24px;
+            border-radius: 20px;
             display: flex; justify-content: space-between; align-items: center;
-            background: var(--card); padding: 10px 15px; border-radius: 8px;
-            margin-bottom: 15px; border: 1px solid var(--border);
-        }
-        .btn { 
-            padding: 8px 12px; border-radius: 6px; cursor: pointer; font-weight: 600;
-            border: 1px solid var(--border); background: var(--card); color: var(--text);
-            display: flex; align-items: center; gap: 6px;
-        }
-        .btn-primary { background: var(--primary); color: white; border: none; }
-
-        /* Resume Content */
-        #resume-frame {
-            background: white; border-radius: 4px; border: 1px solid var(--border);
-            box-shadow: 0 0 10px rgba(0,0,0,0.05); padding: 40px; color: #1a1a1a !important;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
         }
 
-        header {
-            display: flex; justify-content: space-between; border-bottom: 3px solid var(--primary);
-            padding-bottom: 15px; margin-bottom: 20px;
-        }
-        .header-text h1 { font-size: 26pt; text-transform: uppercase; color: #000; margin-bottom: 5px; }
-        .contact-info { font-size: 9pt; display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
-        .qr-container { background: white; padding: 5px; border: 1px solid #ddd; border-radius: 4px; }
+        .theme-swatches { display: flex; gap: 8px; }
+        .swatch { width: 20px; height: 20px; border-radius: 6px; cursor: pointer; border: 2px solid white; transition: 0.2s; }
+        .swatch:hover { transform: scale(1.2); }
 
-        /* Sections */
-        .section-title {
-            background: #f8fafc; border-left: 5px solid var(--primary);
-            padding: 5px 10px; margin: 20px 0 10px 0; font-weight: bold;
-            text-transform: uppercase; font-size: 11pt; color: var(--primary);
+        .btn-action {
+            background: var(--primary); color: white; border: none;
+            padding: 10px 20px; border-radius: 10px; font-weight: 700;
+            cursor: pointer; display: flex; align-items: center; gap: 8px;
+            font-size: 14px; transition: 0.3s;
+        }
+        .btn-action:hover { filter: brightness(1.2); box-shadow: 0 0 15px var(--primary-glow); }
+
+        /* --- Main Layout --- */
+        #resume-canvas {
+            display: grid; grid-template-columns: 320px 1fr; gap: 25px;
+            background: var(--surface); border-radius: 24px; border: 1px solid var(--border);
+            overflow: hidden; padding: 40px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
         }
 
-        .item { margin-bottom: 18px; line-height: 1.4; }
-        .row-meta { display: flex; flex-wrap: wrap; gap: 15px; font-size: 10pt; margin-bottom: 4px; }
-        .job-title { font-weight: 700; font-size: 11pt; display: block; margin-bottom: 2px; }
+        /* --- Sidebar --- */
+        .sidebar { border-right: 1px solid var(--border); padding-right: 25px; }
         
-        .label { font-weight: 600; font-size: 9pt; color: #555; display: flex; align-items: center; gap: 4px; }
-        
-        .details-text { font-size: 9.5pt; text-align: justify; color: #333; }
-        .details-text ul { padding-left: 18px; margin-top: 5px; }
-        .details-text li { margin-bottom: 3px; }
+        .qr-wrapper {
+            background: white; padding: 12px; border-radius: var(--radius);
+            width: fit-content; margin-bottom: 25px; border: 1px solid var(--border);
+        }
 
-        /* Skills/Languages */
-        .grid-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; font-size: 9pt; }
-        .tag { background: #eee; padding: 3px 8px; border-radius: 3px; display: inline-block; }
+        .side-section { margin-bottom: 35px; }
+        .side-title { 
+            font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px;
+            font-weight: 800; color: var(--primary); margin-bottom: 15px;
+        }
 
-        .edu-table { width: 100%; border-collapse: collapse; font-size: 9pt; margin-top: 5px; }
-        .edu-table th { background: #f1f5f9; text-align: left; padding: 8px; border: 1px solid #cbd5e1; }
-        .edu-table td { padding: 8px; border: 1px solid #cbd5e1; }
+        .contact-item { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; font-size: 13px; }
+        .contact-item i { width: 20px; color: var(--primary); }
+
+        .skill-pill {
+            display: inline-block; background: var(--primary-glow); color: var(--primary);
+            padding: 4px 12px; border-radius: 8px; font-size: 12px; font-weight: 600;
+            margin: 0 4px 8px 0; border: 1px solid transparent;
+        }
+
+        /* --- Main Content --- */
+        .content-area { padding-left: 10px; }
+        .hero h1 { font-size: 42px; font-weight: 800; letter-spacing: -1.5px; line-height: 1; }
+        .hero p { color: var(--primary); font-weight: 700; margin: 10px 0 25px 0; font-size: 18px; }
+
+        .section-header {
+            display: flex; align-items: center; gap: 12px; margin: 40px 0 20px 0;
+            font-size: 20px; font-weight: 800;
+        }
+        .section-header i { color: var(--primary); }
+
+        .timeline-item { position: relative; padding-left: 30px; border-left: 2px solid var(--border); margin-bottom: 35px; }
+        .timeline-item::before {
+            content: ''; position: absolute; left: -7px; top: 5px;
+            width: 12px; height: 12px; border-radius: 50%; background: var(--primary);
+        }
+
+        .job-title { font-size: 18px; font-weight: 700; margin-bottom: 2px; }
+        .org-line { display: flex; gap: 15px; align-items: center; font-size: 14px; font-weight: 600; color: var(--text-muted); margin-bottom: 10px; }
+        .org-line b { color: var(--primary); }
+
+        .details-list { font-size: 14px; color: var(--text-muted); text-align: justify; }
+        .details-list ul { padding-left: 18px; }
+        .details-list li { margin-bottom: 6px; }
+
+        .edu-box { 
+            background: var(--bg); padding: 15px; border-radius: var(--radius); 
+            border: 1px solid var(--border); margin-bottom: 10px; 
+            display: flex; justify-content: space-between;
+        }
+
+        @media (max-width: 850px) {
+            #resume-canvas { grid-template-columns: 1fr; padding: 20px; }
+            .sidebar { border-right: none; border-bottom: 1px solid var(--border); padding-right: 0; padding-bottom: 25px; }
+        }
 
         @media print {
-            .toolbar { display: none; }
-            body { background: white; padding: 0; }
-            #resume-frame { border: none; box-shadow: none; padding: 0; width: 100%; }
+            .glass-nav { display: none; }
+            body { padding: 0; }
+            #resume-canvas { border: none; box-shadow: none; width: 100%; grid-template-columns: 250px 1fr; }
         }
     </style>
 </head>
 <body data-theme="light">
 
-<div class="container">
-    <div class="toolbar">
-        <div style="display: flex; gap: 10px;">
-            <button class="btn" onclick="toggleTheme()"><i class="fas fa-moon"></i> Theme</button>
-            <div style="display: flex; align-items: center; gap: 5px; border: 1px solid #ddd; padding: 2px 8px; border-radius: 6px;">
-                <div style="width:15px; height:15px; background:#2563eb; cursor:pointer;" onclick="changeColor('#2563eb')"></div>
-                <div style="width:15px; height:15px; background:#16a34a; cursor:pointer;" onclick="changeColor('#16a34a')"></div>
-                <div style="width:15px; height:15px; background:#dc2626; cursor:pointer;" onclick="changeColor('#dc2626')"></div>
-            </div>
+<div class="app-shell">
+    <nav class="glass-nav">
+        <div class="theme-swatches">
+            <div class="swatch" style="background: #4f46e5;" onclick="setAccent('#4f46e5')"></div>
+            <div class="swatch" style="background: #06b6d4;" onclick="setAccent('#06b6d4')"></div>
+            <div class="swatch" style="background: #10b981;" onclick="setAccent('#10b981')"></div>
+            <div class="swatch" style="background: #f43f5e;" onclick="setAccent('#f43f5e')"></div>
+            <button onclick="toggleTheme()" style="background:none; border:none; cursor:pointer; color:var(--text-main); margin-left:10px;">
+                <i class="fas fa-circle-half-stroke"></i>
+            </button>
         </div>
-        <button class="btn btn-primary" onclick="downloadPDF()"><i class="fas fa-file-pdf"></i> Download PDF</button>
-    </div>
+        <button class="btn-action" onclick="generatePDF()">
+            <i class="fas fa-cloud-arrow-down"></i> Export PDF
+        </button>
+    </nav>
 
-    <div id="resume-frame">
-        <header>
-            <div class="header-text">
+    <div id="resume-canvas">
+        
+        <aside class="sidebar">
+            <div class="qr-wrapper" id="qrcode"></div>
+            
+            <div class="side-section">
+                <h3 class="side-title">Contact Information</h3>
+                <div class="contact-item"><i class="fas fa-envelope"></i> mkannanreddy@gmail.com</div>
+                <div class="contact-item"><i class="fas fa-phone"></i> +91 8807039877</div>
+                <div class="contact-item"><i class="fab fa-whatsapp"></i> +91 8807039877</div>
+                <div class="contact-item"><i class="fas fa-location-arrow"></i> Chennai, TN</div>
+            </div>
+
+            <div class="side-section">
+                <h3 class="side-title">Core Languages</h3>
+                <div class="skill-pill">Tamil</div><div class="skill-pill">Telugu</div>
+                <div class="skill-pill">Hindi</div><div class="skill-pill">English</div>
+                <div class="skill-pill">Malayalam</div>
+            </div>
+
+            <div class="side-section">
+                <h3 class="side-title">Tech & Tools</h3>
+                <div class="skill-pill">Google Sheets</div><div class="skill-pill">Web App Script</div>
+                <div class="skill-pill">CRM Admin</div><div class="skill-pill">Data Migration</div>
+                <div class="skill-pill">MIS Analytics</div><div class="skill-pill">UI/UX Design</div>
+                <div class="skill-pill">Automation</div><div class="skill-pill">LMS Tools</div>
+            </div>
+
+            <div class="side-section">
+                <h3 class="side-title">Strengths</h3>
+                <p style="font-size: 12px; color: var(--text-muted);">
+                    Quick Learner, Leadership Qualities, Detail-Oriented, Organizational Skills, Stress Management, Punctuality.
+                </p>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <div class="hero">
                 <h1>KANNAN REDDY</h1>
-                <div class="contact-info">
-                    <span><i class="fas fa-envelope"></i> mkannanreddy@gmail.com</span>
-                    <span><i class="fas fa-phone"></i> +91 8807039877</span>
-                    <span><i class="fab fa-whatsapp"></i> +91 8807039877</span>
-                    <span><i class="fas fa-location-dot"></i> Chennai, Tamil Nadu</span>
+                <p>Technical Support Specialist & Team Leader</p>
+                <div class="details-list" style="border-left: 3px solid var(--primary); padding-left: 15px;">
+                    Customer service-focused technical support specialist with experience in help desk and “break-fix” environments. Highly adept in systems analysis, diagnostics and troubleshooting.
                 </div>
             </div>
-            <div class="qr-container" id="qrcode"></div>
-        </header>
 
-        <div class="section-title">Career Objective</div>
-        <p class="details-text" style="padding: 0 10px;">
-            Customer service-focused technical support specialist with experience in help desk and “break-fix” environments. Highly adept in systems analysis, diagnostics and troubleshooting.
-        </p>
+            <h2 class="section-header"><i class="fas fa-layer-group"></i> Work Experience</h2>
 
-        <div class="section-title">Work Experience</div>
-
-        <div class="item">
-            <span class="job-title">Onboarding & Customer Support Team Head</span>
-            <div class="row-meta">
-                <span class="label">🏢 Organization: <span style="font-weight:400">RSoft Technologies</span></span>
-                <span class="label">📅 Period: <span style="font-weight:400">12/06/2023 - 03/03/2025</span></span>
-            </div>
-            <div class="label" style="margin-top:5px;">📝 Details:</div>
-            <div class="details-text">
-                <ul>
-                    <li>Led the end-to-end customer onboarding process, ensuring smooth and timely transition of new clients onto the platform.</li>
-                    <li>Headed the support team, assigning tasks, monitoring performance, and ensuring adherence to SLAs and quality standards.</li>
-                    <li>Conducted business requirement analysis through online meetings to understand client workflows.</li>
-                    <li>Oversaw software implementation, configuration, and deployment in alignment with customer business processes.</li>
-                    <li>Delivered online product demonstrations, training sessions, and knowledge transfers.</li>
-                    <li>Managed technical support operations, ensuring quick issue identification, escalation, and resolution.</li>
-                    <li>Administered CRM systems, including customer data management, data migration, and lifecycle tracking.</li>
-                    <li>Implemented automation and workflow management to improve support efficiency.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="item">
-            <span class="job-title">Site In-Charge</span>
-            <div class="row-meta">
-                <span class="label">🏢 Organization: <span style="font-weight:400">ABC Engineering Works</span></span>
-                <span class="label">📅 Period: <span style="font-weight:400">29 Oct 2022 – 30 Jun 2023</span></span>
-            </div>
-            <div class="label" style="margin-top:5px;">📝 Details:</div>
-            <div class="details-text">
-                <ul>
-                    <li>Managed end-to-end site operations as the authorized representative.</li>
-                    <li>Planned and arranged skilled and unskilled manpower based on project priorities.</li>
-                    <li>Handled CISF gate pass documentation, medical, safety compliance, and portal submissions.</li>
-                    <li>Prepared and managed work permits including height work, hot work (fire), and oil handling.</li>
-                    <li>Managed billing processes, measurements, and coordination with accounts.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="item">
-            <span class="job-title">Customer Support Executive</span>
-            <div class="row-meta">
-                <span class="label">🏢 Organization: <span style="font-weight:400">Yupp Tv Pvt Ltd</span></span>
-                <span class="label">📅 Period: <span style="font-weight:400">31/01/2019 - 30/04/2020</span></span>
-            </div>
-            <div class="label" style="margin-top:5px;">📝 Details:</div>
-            <div class="details-text">
-                Experienced in managing raw data and handling both inbound and outbound calls, including international calling. Skilled in resolving customer issues efficiently, performing cross-sales and renewals. Adept at CRM administration and data management.
-            </div>
-        </div>
-
-        <div class="item">
-            <span class="job-title">Sr. Customer Relationship Officer</span>
-            <div class="row-meta">
-                <span class="label">🏢 Organization: <span style="font-weight:400">Bank Bazaar.com</span></span>
-                <span class="label">📅 Period: <span style="font-weight:400">03/09/2015 - 30/08/2018</span></span>
-            </div>
-            <div class="label" style="margin-top:5px;">📝 Details:</div>
-            <div class="details-text">
-                Proficient in tele-calling and performing home visits to engage with customers. Skilled in managing CRM systems, generating data entry, and producing detailed reports to track sales performance.
-            </div>
-        </div>
-
-        <div class="section-title">Education</div>
-        <table class="edu-table">
-            <tr>
-                <th>Course</th>
-                <th>Institute</th>
-                <th>Year</th>
-                <th>%</th>
-            </tr>
-            <tr>
-                <td>12th Science</td>
-                <td>NIOS Board</td>
-                <td>2021</td>
-                <td>60%</td>
-            </tr>
-            <tr>
-                <td>ITI Welder</td>
-                <td>Govt ITI Guindy</td>
-                <td>2013</td>
-                <td>75%</td>
-            </tr>
-        </table>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-            <div>
-                <div class="section-title">Skillset</div>
-                <div class="grid-list">
-                    <span class="tag">Google Sheets</span>
-                    <span class="tag">CRM Management</span>
-                    <span class="tag">Data Cleaning</span>
-                    <span class="tag">Telesales</span>
-                    <span class="tag">Web App Script</span>
-                    <span class="tag">MIS Reporting</span>
+            <div class="timeline-item">
+                <div class="job-title">Onboarding & Customer Support Team Head</div>
+                <div class="org-line">🏢 <b>RSoft Technologies</b> <span>📅 12/2023 - 03/2025</span></div>
+                <div class="details-list">
+                    <ul>
+                        <li>Led the end-to-end customer onboarding process, ensuring smooth transition of new clients onto the platform.</li>
+                        <li>Headed the support team, assigning tasks, monitoring performance, and ensuring adherence to SLAs.</li>
+                        <li>Conducted business requirement analysis to understand client workflows and define strategies.</li>
+                        <li>Oversaw software implementation, configuration, and deployment in alignment with business processes.</li>
+                        <li>Delivered online product demonstrations, training sessions, and knowledge transfers.</li>
+                        <li>Managed technical support operations, ensuring quick issue identification and resolution.</li>
+                        <li>Administered CRM systems, including data management, migration, and lifecycle tracking.</li>
+                        <li>Implemented automation and workflow management to improve support efficiency.</li>
+                        <li>Analyzed support data and prepared reports using Microsoft Excel to track customer trends.</li>
+                        <li>Gathered customer feedback and drove continuous process improvement initiatives.</li>
+                    </ul>
                 </div>
             </div>
-            <div>
-                <div class="section-title">Languages</div>
-                <div class="grid-list">
-                    <span class="tag">Tamil</span>
-                    <span class="tag">Telugu</span>
-                    <span class="tag">Hindi</span>
-                    <span class="tag">English</span>
-                    <span class="tag">Malayalam</span>
+
+            <div class="timeline-item">
+                <div class="job-title">Site In-Charge</div>
+                <div class="org-line">🏢 <b>ABC Engineering Works</b> <span>📅 10/2022 – 06/2023</span></div>
+                <div class="details-list">
+                    <ul>
+                        <li>Managed end-to-end site operations as the authorized representative for the contract.</li>
+                        <li>Planned and arranged skilled/unskilled manpower based on project priorities.</li>
+                        <li>Handled CISF gate pass documentation, medical, safety compliance, and CLIMS portal submissions.</li>
+                        <li>Prepared and managed work permits including height work, hot work, and oil handling.</li>
+                        <li>Ensured effective manpower utilization to meet timelines and productivity targets.</li>
+                        <li>Managed billing processes, measurements, and coordination with accounts for invoicing.</li>
+                    </ul>
                 </div>
             </div>
-        </div>
 
-        <p style="font-size: 8pt; color: #777; margin-top: 30px; border-top: 1px dashed #ccc; padding-top: 10px;">
-            Note: All educational certificates are in the name of Raju Krishnaiah. | Place: Chennai | Name: Kannan Reddy
-        </p>
+            <div class="timeline-item">
+                <div class="job-title">Customer Support Executive</div>
+                <div class="org-line">🏢 <b>Yupp Tv Pvt Ltd</b> <span>📅 2019 - 2020</span></div>
+                <div class="details-list">
+                    Experienced in managing raw data and handling inbound/outbound calls, including international calling. Skilled in capturing and resolving customer issues efficiently. Proficient in performing cross-sales and renewals. Adept at CRM administration and maintaining accurate customer information.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="job-title">Sr. Customer Relationship Officer</div>
+                <div class="org-line">🏢 <b>Bank Bazaar.com</b> <span>📅 2015 - 2018</span></div>
+                <div class="details-list">
+                    Tele-calling to disseminate product information and fixing meetings. Proficient in home visits to engage with customers directly. Skilled in managing CRM systems and generating detailed reports to track sales performance.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="job-title">Marketing Executive</div>
+                <div class="org-line">🏢 <b>Mekuba Petro Products</b> <span>📅 2013 - 2015</span></div>
+                <div class="details-list">
+                    Lead generation through strategic approaches, cold calling, and appointment setting. Experienced in delivering persuasive presentations and training programs to stakeholders. Conducted live demonstrations to showcase features.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="job-title">Sr. Technician</div>
+                <div class="org-line">🏢 <b>Nicco Engineering Services</b> <span>📅 2011 - 2012</span></div>
+                <div class="details-list">
+                    Application of Belzona metal protection coatings. Managed travel logistics and tool preparation. Conducted online leak sealing and safety valve testing for power plants and petrochemical facilities.
+                </div>
+            </div>
+
+            <h2 class="section-header"><i class="fas fa-graduation-cap"></i> Academic Background</h2>
+            <div class="edu-box">
+                <div><b>12th Science</b><br><small>National Institute of Open Schooling</small></div>
+                <div>2021 | 60%</div>
+            </div>
+            <div class="edu-box">
+                <div><b>ITI Welder</b><br><small>Govt ITI Guindy (State Board)</small></div>
+                <div>2013 | 75%</div>
+            </div>
+
+            <div style="margin-top:40px; border-top: 1px dashed var(--border); padding-top: 15px; font-size: 11px; color: var(--text-muted);">
+                Note: All educational certificates are in the name of Raju Krishnaiah. <br>
+                Declaration: I hereby declare that the above information is true to my knowledge. <br>
+                <b>Place: Chennai | Kannan Reddy</b>
+            </div>
+        </main>
     </div>
 </div>
 
 <script>
-    // QR Generation
+    // Initialize QR Code pointing to your GitHub URL
     new QRCode(document.getElementById("qrcode"), {
         text: "https://kannanreddy.github.io/Resume",
-        width: 80,
-        height: 80
+        width: 100,
+        height: 100,
+        colorDark : "#0f172a",
+        colorLight : "#ffffff"
     });
 
     function toggleTheme() {
-        document.body.setAttribute('data-theme', document.body.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
+        const current = document.body.getAttribute('data-theme');
+        document.body.setAttribute('data-theme', current === 'light' ? 'dark' : 'light');
     }
 
-    function changeColor(color) {
+    function setAccent(color) {
         document.documentElement.style.setProperty('--primary', color);
     }
 
-    function downloadPDF() {
-        const element = document.getElementById('resume-frame');
+    function generatePDF() {
+        const element = document.getElementById('resume-canvas');
         const opt = {
-            margin: 0.2,
-            filename: 'Kannan_Reddy_Resume.pdf',
+            margin: 0.1,
+            filename: 'Kannan_Reddy_Portfolio.pdf',
             image: { type: 'jpeg', quality: 1 },
             html2canvas: { scale: 3, useCORS: true },
             jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
