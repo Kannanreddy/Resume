@@ -2,956 +2,3643 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080d18">
-<meta name="description" content="Kannan Reddy — technology, business analytics, customer success and workflow automation portfolio.">
-<title>Kannan Reddy | Technology & Automation</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-:root {
-  --bg:#080d18;
-  --bg2:#0c1424;
-  --panel:#111d30;
-  --panel2:#15243a;
-  --blue:#69adff;
-  --teal:#4ce0c0;
-  --purple:#a698ff;
-  --white:#eff5ff;
-  --muted:#98abc6;
-  --line:rgba(153,180,220,.16);
-  --radius:20px;
-  --shadow:0 24px 70px rgba(0,0,0,.22);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{
-  background:
-    radial-gradient(ellipse at 12% 0%,rgba(43,104,193,.19),transparent 36rem),
-    radial-gradient(ellipse at 90% 35%,rgba(35,173,153,.07),transparent 32rem),
-    var(--bg);
-  color:var(--white);
-  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
-  line-height:1.65;
-  overflow-x:hidden;
-}
-body::before{
-  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
-  background-image:
-    linear-gradient(rgba(140,170,220,.035) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(140,170,220,.035) 1px,transparent 1px);
-  background-size:42px 42px;
-  mask-image:linear-gradient(to bottom,#000,transparent 90%);
-}
-a{color:inherit;text-decoration:none}
-button,input,textarea{font:inherit}
-button,a{-webkit-tap-highlight-color:transparent}
-a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
-  outline:2px solid var(--teal);outline-offset:4px
-}
-img,svg{max-width:100%}
-::selection{background:#397df580;color:white}
-.container{width:min(1160px,calc(100% - 40px));margin-inline:auto}
-.muted{color:var(--muted)}
-.accent{
-  background:linear-gradient(100deg,var(--blue),var(--teal));
-  -webkit-background-clip:text;background-clip:text;color:transparent
-}
-.eyebrow{
-  color:var(--teal);font:700 11px/1.5 ui-monospace,SFMono-Regular,monospace;
-  letter-spacing:2.5px;text-transform:uppercase
-}
-.section{padding:100px 0}
-.section-head{max-width:720px;margin:0 auto 44px;text-align:center}
-.section-head h2{font-size:clamp(30px,4vw,46px);letter-spacing:-1.8px;line-height:1.15;margin:12px 0 15px}
-.section-head p{color:var(--muted);font-size:15px}
-.section-line{width:52px;height:3px;border-radius:9px;background:linear-gradient(90deg,var(--blue),var(--teal));margin:22px auto 0}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:9px;
-  border:1px solid transparent;border-radius:12px;padding:12px 18px;
-  font-size:13px;font-weight:750;cursor:pointer;transition:.22s ease
-}
-.btn:hover{transform:translateY(-2px)}
-.btn-primary{background:linear-gradient(115deg,#438bfa,#36b9b5);color:#07101c;box-shadow:0 10px 30px #347df52b}
-.btn-secondary{border-color:var(--line);background:#ffffff06;color:var(--white)}
-.btn-secondary:hover{border-color:#69adff70;background:#69adff0c}
-.tag{
-  display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);
-  background:#ffffff05;color:#b5c7df;border-radius:100px;padding:7px 11px;font-size:11px
-}
-.dot{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 12px #4ce0c077}
+  <meta
+    name="description"
+    content="Kannan Reddy's professional portfolio — technology, integrations, communication platforms, automation, and career opportunities."
+  >
+  <meta name="theme-color" content="#080d19">
 
-/* Navigation */
-.nav-wrap{
-  position:sticky;top:0;z-index:100;border-bottom:1px solid #ffffff0c;
-  background:#080d18d9;backdrop-filter:blur(18px)
-}
-.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.4px}
-.brand-mark{
-  display:grid;place-items:center;width:43px;height:43px;border-radius:14px;
-  background:linear-gradient(135deg,#397df5,#20c4ad);color:#fff;
-  font-size:16px;font-weight:900;letter-spacing:-2px;
-  box-shadow:0 8px 25px #347df533
-}
-.brand small{display:block;font-size:10px;color:var(--muted);font-weight:500;letter-spacing:1px}
-.nav-links{display:flex;align-items:center;gap:25px}
-.nav-links a{font-size:12px;color:#afbed4;transition:color .2s}
-.nav-links a:hover,.nav-links a.active{color:var(--teal)}
-.nav-cta{font-size:12px;padding:10px 14px}
-.menu-btn{display:none;background:none;color:white;border:1px solid var(--line);border-radius:10px;padding:8px 11px;cursor:pointer}
+  <title>Kannan Reddy | Technology & Integration Portfolio</title>
 
-/* Hero */
-.hero{padding:100px 0 86px;position:relative}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
-.availability{display:inline-flex;align-items:center;gap:9px;margin-bottom:25px}
-.hero h1{font-size:clamp(43px,6.3vw,76px);line-height:1.03;letter-spacing:-4px;max-width:720px}
-.hero-subtitle{font-size:clamp(17px,2vw,21px);color:#d1deef;margin-top:22px}
-.hero-copy{color:var(--muted);font-size:15px;max-width:570px;margin-top:14px}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.hero-tags{display:flex;gap:9px;flex-wrap:wrap;margin-top:27px}
-.hero-visual{position:relative;min-width:0}
-.visual-glow{position:absolute;inset:5% 0;background:#387df52a;filter:blur(65px);border-radius:50%;z-index:-1}
-.code-window{
-  border:1px solid #8eb8f22a;border-radius:20px;overflow:hidden;
-  background:linear-gradient(145deg,#14233bfa,#0a1221fa);box-shadow:var(--shadow);
-  transform:perspective(1000px) rotateY(-3deg)
-}
-.window-top{display:flex;align-items:center;gap:7px;padding:15px 18px;border-bottom:1px solid var(--line)}
-.window-dot{width:8px;height:8px;border-radius:50%;background:#3d4b62}
-.window-dot:first-child{background:#ff7e8a}.window-dot:nth-child(2){background:#f5c76b}.window-dot:nth-child(3){background:#4ce0c0}
-.window-title{margin-left:auto;color:#8297b6;font:10px monospace}
-.code-body{padding:25px 24px 20px;font:12px/2 ui-monospace,SFMono-Regular,monospace;overflow:hidden}
-.code-line{white-space:pre-wrap;overflow-wrap:anywhere}
-.code-muted{color:#7185a4}.code-blue{color:#80baff}.code-green{color:#61e2c5}.code-purple{color:#b7a4ff}.code-white{color:#e9f1ff}
-.code-status{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 19px;border-top:1px solid var(--line);font-size:10px;color:var(--muted)}
-.hero-orbit{
-  position:absolute;right:-12px;top:-23px;width:78px;height:78px;border:1px solid #69adff38;
-  border-radius:50%;display:grid;place-items:center;color:var(--teal);font-size:25px;
-  background:#0c1729d9;box-shadow:0 0 40px #3986fa19
-}
-.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:64px}
-.hero-stat{border-left:2px solid #69adff70;padding:4px 0 4px 15px}
-.hero-stat strong{display:block;font-size:17px;letter-spacing:-.3px}
-.hero-stat span{font-size:11px;color:var(--muted)}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-/* General cards */
-.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
-.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.card{
-  min-width:0;border:1px solid var(--line);border-radius:var(--radius);
-  background:linear-gradient(145deg,#142139eb,#0d1627f5);padding:25px;
-  transition:transform .25s,border-color .25s,box-shadow .25s
-}
-.card:hover{transform:translateY(-4px);border-color:#69adff65;box-shadow:0 24px 55px #0002}
-.card-icon{
-  width:45px;height:45px;display:grid;place-items:center;border-radius:13px;
-  background:#69adff13;border:1px solid #69adff2c;color:var(--blue);font-size:21px;margin-bottom:19px
-}
-.card h3{font-size:17px;letter-spacing:-.3px;margin-bottom:9px}
-.card p{font-size:13px;color:var(--muted)}
-.pills{display:flex;gap:7px;flex-wrap:wrap;margin-top:18px}
-.pill{font-size:10px;color:#b4c7e1;background:#ffffff06;border:1px solid var(--line);padding:5px 9px;border-radius:8px}
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
-/* About */
-.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:42px;align-items:start}
-.about-panel{border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,#152541,#0c1424);padding:30px}
-.about-monogram{width:86px;height:86px;display:grid;place-items:center;border-radius:25px;background:linear-gradient(135deg,#397df5,#20c4ad);font-size:30px;font-weight:900;letter-spacing:-4px;box-shadow:0 15px 35px #347df52a}
-.about-panel h3{margin:22px 0 6px;font-size:21px}
-.about-panel p{font-size:13px;color:var(--muted)}
-.about-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-.about-copy h3{font-size:25px;line-height:1.3;letter-spacing:-.8px;margin-bottom:17px}
-.about-copy>p{color:var(--muted);font-size:14px;margin-bottom:15px}
-.check-list{list-style:none;display:grid;gap:12px;margin-top:22px}
-.check-list li{display:flex;gap:11px;color:#cfddf0;font-size:13px}
-.check-list li span{color:var(--teal)}
+  <style>
+    /* =====================================================
+       1. GLOBAL SETTINGS
+    ===================================================== */
 
-/* Dashboard components */
-.dash-card{padding:0;overflow:hidden}
-.dash-top{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:17px 20px;border-bottom:1px solid var(--line)}
-.dash-top .eyebrow{font-size:9px;letter-spacing:1.4px}
-.dash-top small{font-size:10px;color:var(--muted)}
-.dash-content{padding:20px}
-.metric-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-bottom:15px}
-.metric{min-width:0;background:#07101f;border:1px solid #ffffff0d;border-radius:11px;padding:12px 10px}
-.metric span{display:block;color:var(--muted);font-size:9px;margin-bottom:8px}
-.metric strong{display:block;font-size:clamp(14px,1.6vw,22px);line-height:1.25;overflow-wrap:anywhere}
-.metric em{display:block;color:var(--teal);font-size:9px;font-style:normal;margin-top:6px}
-.chart-box{background:#07101f;border:1px solid #ffffff0d;border-radius:12px;padding:15px}
-.chart-caption{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:10px;margin-bottom:10px}
-.chart{display:block;width:100%;overflow:visible}
-.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:10px;color:var(--muted);margin-top:10px}
-.legend i{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px}
-.bar-row{display:grid;grid-template-columns:93px minmax(0,1fr) 34px;align-items:center;gap:9px;margin:16px 0;font-size:10px;color:var(--muted)}
-.bar-track{height:7px;background:#25344c;border-radius:20px;overflow:hidden}
-.bar-fill{height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--blue),var(--teal))}
-.bar-row b{color:var(--white);font-size:10px}
-.status{display:inline-flex;align-items:center;gap:6px;border:1px solid #4ce0c02e;background:#4ce0c00d;color:var(--teal);border-radius:20px;padding:6px 9px;font-size:9px}
-.status:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--teal)}
-.caveat{font-size:10px;color:#8195b3;margin-top:14px;line-height:1.6}
+    :root {
+      --bg: #080d19;
+      --bg-soft: #0c1323;
+      --surface: #111a2c;
+      --surface-light: #152138;
+      --border: rgba(153, 178, 220, 0.15);
+      --text: #edf3ff;
+      --muted: #9caec9;
+      --blue: #5b8cff;
+      --cyan: #4de3e8;
+      --purple: #a18aff;
+      --green: #69e4b1;
+      --radius: 20px;
+      --container: 1160px;
+      --shadow: 0 20px 70px rgba(0, 0, 0, 0.23);
+    }
 
-/* Workflow */
-.workflow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:23px;margin-top:28px}
-.workflow-step{position:relative;text-align:center;padding:23px 12px;border:1px solid var(--line);border-radius:15px;background:#0b1424}
-.workflow-step:not(:last-child):after{content:"→";position:absolute;right:-19px;top:36%;color:var(--teal);font-size:18px}
-.workflow-icon{width:43px;height:43px;display:grid;place-items:center;border-radius:12px;background:#69adff13;color:var(--blue);margin:0 auto 13px;font-size:21px}
-.workflow-step strong{display:block;font-size:12px}
-.workflow-step small{display:block;color:var(--muted);font-size:10px;margin-top:7px}
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* Projects */
-.project-card{display:flex;flex-direction:column}
-.project-number{font:700 11px monospace;color:var(--teal);letter-spacing:1px;margin-bottom:19px}
-.project-card h3{font-size:19px}
-.project-card p{margin-top:10px}
-.project-card .pills{margin-bottom:20px}
-.project-footer{margin-top:auto;padding-top:15px;border-top:1px solid var(--line);font-size:11px;color:var(--blue)}
-.project-footer span{float:right}
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
 
-/* Skills */
-.skill-group h3{display:flex;align-items:center;gap:10px}
-.skill-item{margin-top:19px}
-.skill-name{display:flex;justify-content:space-between;gap:12px;font-size:12px;color:#dce7f6;margin-bottom:8px}
-.skill-name span:last-child{color:var(--muted);font-size:10px}
-.skill-track{height:5px;background:#26354c;border-radius:20px;overflow:hidden}
-.skill-fill{height:100%;background:linear-gradient(90deg,#438bfa,#4ce0c0);border-radius:20px}
+    body {
+      background:
+        radial-gradient(
+          circle at 85% 8%,
+          rgba(48, 87, 173, 0.12),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 8% 40%,
+          rgba(48, 196, 205, 0.05),
+          transparent 27%
+        ),
+        var(--bg);
 
-/* Contact */
-.contact-panel{
-  display:grid;grid-template-columns:1fr 1fr;gap:35px;padding:35px;
-  border:1px solid var(--line);border-radius:23px;
-  background:radial-gradient(ellipse at 0% 0%,#24497955,transparent 55%),#101b2d
-}
-.contact-panel h3{font-size:25px;letter-spacing:-.8px;margin:12px 0}
-.contact-panel p{font-size:13px;color:var(--muted)}
-.contact-links{display:grid;gap:11px;margin-top:23px}
-.contact-link{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid var(--line);border-radius:12px;background:#ffffff04;font-size:12px;overflow-wrap:anywhere}
-.contact-link b{color:var(--teal);font-size:17px}
-.contact-form{display:grid;gap:12px}
-.contact-form label{font-size:11px;color:#b9c9df}
-.contact-form input,.contact-form textarea{
-  display:block;width:100%;margin-top:6px;padding:12px 13px;
-  background:#07101f;border:1px solid var(--line);border-radius:10px;color:var(--white);
-  outline:none;resize:vertical
-}
-.contact-form input:focus,.contact-form textarea:focus{border-color:#69adff80}
-.contact-form textarea{min-height:115px}
-.contact-form button{width:100%}
-.form-note{font-size:10px!important;margin-top:2px}
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
 
-/* Footer */
-footer{border-top:1px solid var(--line);padding:25px 0}
-.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
-footer p,footer a{font-size:11px;color:var(--muted)}
-footer a:hover{color:var(--teal)}
-.footer-links{display:flex;gap:17px;flex-wrap:wrap}
+    body,
+    button,
+    input,
+    textarea {
+      font-family: "DM Sans", sans-serif;
+    }
 
-/* Scroll reveal and back-to-top */
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.back-top{
-  position:fixed;right:20px;bottom:20px;width:42px;height:42px;border-radius:13px;
-  border:1px solid var(--line);background:#14243b;color:var(--teal);
-  display:none;place-items:center;cursor:pointer;z-index:80
-}
-.back-top.show{display:grid}
-@media(max-width:900px){
-  .nav-links{gap:15px}.hero-grid{gap:35px}.hero h1{letter-spacing:-2.8px}
-  .workflow{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .workflow-step:nth-child(2):after{display:none}
-}
-@media(max-width:760px){
-  .container{width:min(100% - 30px,600px)}
-  .section{padding:72px 0}
-  .nav{height:68px}.menu-btn{display:block}
-  .nav-cta{display:none}
-  .nav-links{
-    display:none;position:absolute;top:68px;left:0;right:0;padding:18px 22px 23px;
-    background:#0b1322;border-bottom:1px solid var(--line);
-    flex-direction:column;align-items:stretch;gap:0
-  }
-  .nav-links.open{display:flex}
-  .nav-links a{padding:12px 0;border-bottom:1px solid #ffffff0b}
-  .hero{padding:68px 0 50px}
-  .hero-grid,.about-grid,.contact-panel{grid-template-columns:1fr}
-  .hero-grid{gap:44px}
-  .hero h1{font-size:clamp(42px,10vw,62px);letter-spacing:-2.5px}
-  .hero-visual{max-width:560px;width:100%;margin:auto}
-  .hero-stats{margin-top:45px}
-  .grid-3{grid-template-columns:1fr}
-  .grid-2{grid-template-columns:1fr}
-  .contact-panel{padding:23px}
-  .section-head{margin-bottom:30px}
-  .metric strong{font-size:clamp(14px,4vw,22px)}
-}
-@media(max-width:400px){
-  .metric-grid{gap:5px}
-  .metric{padding:10px 7px}
-  .workflow{gap:10px}
-  .workflow-step{padding:17px 8px}
-  .hero-actions .btn{width:100%}
-  .code-body{padding:19px 14px;font-size:10px}
-}
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*:before,*:after{animation:none!important;transition:none!important}
-  .reveal{opacity:1;transform:none}
-}
-@media print{
-  .nav-wrap,.back-top,.hero-actions,.contact-form button{display:none!important}
-  body{background:white;color:#111}
-  .section{padding:35px 0}
-  .card,.tech-card,.contact-panel{break-inside:avoid;box-shadow:none}
-}
-</style>
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    ::selection {
+      color: #ffffff;
+      background: #345bd0;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 44px));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 105px 0;
+      position: relative;
+    }
+
+    .section-alt {
+      background: rgba(255, 255, 255, 0.018);
+      border-top: 1px solid rgba(255, 255, 255, 0.035);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.035);
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 46px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 24px;
+      height: 2px;
+      border-radius: 5px;
+      background: var(--cyan);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Manrope", sans-serif;
+      line-height: 1.2;
+      letter-spacing: -0.7px;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 6vw, 5.2rem);
+      font-weight: 800;
+      letter-spacing: -3px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.15rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 1.18rem;
+      font-weight: 700;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    .gradient-text {
+      background: linear-gradient(
+        110deg,
+        #ffffff 5%,
+        #8db1ff 48%,
+        #4de3e8 100%
+      );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .section-description {
+      max-width: 680px;
+      font-size: 1rem;
+    }
+
+    .card {
+      background:
+        linear-gradient(
+          145deg,
+          rgba(24, 37, 61, 0.92),
+          rgba(12, 20, 35, 0.96)
+        );
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .icon {
+      display: inline-grid;
+      place-items: center;
+      flex-shrink: 0;
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(91, 140, 255, 0.24);
+      border-radius: 14px;
+      background: rgba(91, 140, 255, 0.1);
+      color: #a9c2ff;
+      font-size: 1.25rem;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 19px;
+    }
+
+    .tag {
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 6px 11px;
+      background: rgba(255, 255, 255, 0.035);
+      color: #c7d5ec;
+      font-size: 0.76rem;
+    }
+
+    .btn {
+      min-height: 48px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      border-radius: 12px;
+      padding: 12px 19px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.91rem;
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      color: #07101f;
+      background: linear-gradient(110deg, #6f9bff, #50e2e4);
+      box-shadow: 0 8px 28px rgba(77, 146, 255, 0.2);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      border-color: var(--border);
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(91, 140, 255, 0.6);
+      background: rgba(91, 140, 255, 0.09);
+    }
+
+    /* =====================================================
+       2. NAVIGATION
+    ===================================================== */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(8, 13, 25, 0.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .navbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-family: "Manrope", sans-serif;
+      font-weight: 800;
+      font-size: 1.04rem;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      color: #08101d;
+      background: linear-gradient(135deg, #72a0ff, #4de3e8);
+      font-size: 0.92rem;
+      font-weight: 800;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.83rem;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #ffffff;
+    }
+
+    .nav-cta {
+      color: var(--text) !important;
+      border: 1px solid rgba(91, 140, 255, 0.42);
+      border-radius: 10px;
+      padding: 9px 13px;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1.25rem;
+    }
+
+    /* =====================================================
+       3. HERO SECTION
+    ===================================================== */
+
+    .hero {
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      padding: 90px 0 85px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 64px;
+    }
+
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      border: 1px solid rgba(105, 228, 177, 0.24);
+      background: rgba(105, 228, 177, 0.065);
+      color: #a7f1d0;
+      padding: 8px 12px;
+      border-radius: 30px;
+      margin-bottom: 27px;
+      font-size: 0.79rem;
+      font-weight: 600;
+    }
+
+    .availability-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 12px rgba(105, 228, 177, 0.75);
+    }
+
+    .hero h1 {
+      max-width: 760px;
+      margin-bottom: 23px;
+    }
+
+    .hero-description {
+      max-width: 620px;
+      font-size: 1.06rem;
+      line-height: 1.85;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 30px;
+    }
+
+    .hero-note {
+      margin-top: 22px;
+      font-size: 0.85rem;
+    }
+
+    .hero-note strong {
+      color: #dce7ff;
+    }
+
+    .hero-visual {
+      min-width: 0;
+      position: relative;
+    }
+
+    .hero-glow {
+      position: absolute;
+      inset: 8% 0;
+      background: rgba(60, 118, 255, 0.13);
+      filter: blur(65px);
+      pointer-events: none;
+    }
+
+    .profile-card {
+      position: relative;
+      padding: 25px;
+      overflow: hidden;
+    }
+
+    .profile-card::before {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      top: -130px;
+      right: -100px;
+      background: rgba(77, 227, 232, 0.12);
+      filter: blur(30px);
+      border-radius: 50%;
+    }
+
+    .profile-top {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      position: relative;
+    }
+
+    .profile-photo-wrap {
+      width: 112px;
+      height: 112px;
+      border-radius: 25px;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 2px solid rgba(112, 160, 255, 0.65);
+      background: linear-gradient(135deg, #254477, #152139);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
+    }
+
+    .profile-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+    }
+
+    .profile-photo-fallback {
+      display: none;
+      width: 100%;
+      height: 100%;
+      place-items: center;
+      color: #ffffff;
+      background:
+        radial-gradient(circle at 50% 28%, #9bc4ff 0 15%, transparent 16%),
+        radial-gradient(ellipse at 50% 93%, #6591d9 0 36%, transparent 37%),
+        linear-gradient(145deg, #263c67, #10182b);
+      font-family: "Manrope", sans-serif;
+      font-size: 1.65rem;
+      font-weight: 800;
+    }
+
+    .profile-card h2 {
+      font-size: 1.38rem;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+
+    .profile-role {
+      color: #a8bad7;
+      font-size: 0.85rem;
+    }
+
+    .profile-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 24px 0;
+    }
+
+    .profile-label {
+      color: var(--muted);
+      font-size: 0.78rem;
+      margin-bottom: 10px;
+    }
+
+    .profile-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .highlight {
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: rgba(255, 255, 255, 0.025);
+      padding: 13px;
+    }
+
+    .highlight strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 0.92rem;
+      margin-bottom: 4px;
+    }
+
+    .highlight span {
+      color: var(--muted);
+      font-size: 0.76rem;
+    }
+
+    .profile-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 21px;
+    }
+
+    .profile-tag {
+      color: #c8d8f2;
+      background: rgba(91, 140, 255, 0.09);
+      border: 1px solid rgba(91, 140, 255, 0.18);
+      border-radius: 8px;
+      padding: 6px 9px;
+      font-size: 0.74rem;
+    }
+
+    /* =====================================================
+       4. QUICK CAPABILITIES
+    ===================================================== */
+
+    .capability-strip {
+      padding: 24px 0;
+      border-block: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.018);
+    }
+
+    .capability-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 17px 26px;
+    }
+
+    .capability-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: #bdcce3;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .capability-item span {
+      color: var(--cyan);
+    }
+
+    /* =====================================================
+       5. ABOUT
+    ===================================================== */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .about-copy p + p {
+      margin-top: 16px;
+    }
+
+    .about-points {
+      display: grid;
+      gap: 13px;
+      margin-top: 27px;
+    }
+
+    .about-point {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .checkmark {
+      width: 25px;
+      height: 25px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: rgba(77, 227, 232, 0.1);
+      color: var(--cyan);
+      font-size: 0.82rem;
+      margin-top: 2px;
+    }
+
+    .about-point strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 0.94rem;
+    }
+
+    .about-point p {
+      font-size: 0.86rem;
+    }
+
+    .about-panel {
+      padding: 28px;
+    }
+
+    .about-panel h3 {
+      margin-bottom: 19px;
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .info-row:last-child {
+      border-bottom: 0;
+    }
+
+    .info-label {
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .info-value {
+      text-align: right;
+      font-size: 0.87rem;
+      font-weight: 600;
+      overflow-wrap: anywhere;
+    }
+
+    /* =====================================================
+       6. WORK EXPERIENCE
+       This section is deliberately visible in the page.
+    ===================================================== */
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 22px;
+      max-width: 930px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 30px;
+      bottom: 30px;
+      width: 1px;
+      background: linear-gradient(
+        to bottom,
+        var(--blue),
+        rgba(77, 227, 232, 0.15)
+      );
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 19px;
+      position: relative;
+    }
+
+    .timeline-marker {
+      width: 42px;
+      height: 42px;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      color: var(--cyan);
+      background: #101d34;
+      border: 1px solid rgba(77, 227, 232, 0.3);
+    }
+
+    .timeline-content {
+      padding: 25px;
+    }
+
+    .timeline-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .timeline-content h3 {
+      font-size: 1.12rem;
+    }
+
+    .timeline-company {
+      color: #9db8ff;
+      margin-top: 6px;
+      font-size: 0.89rem;
+      font-weight: 600;
+    }
+
+    .timeline-date {
+      display: inline-block;
+      color: #a9c6ff;
+      background: rgba(91, 140, 255, 0.09);
+      border: 1px solid rgba(91, 140, 255, 0.19);
+      padding: 5px 10px;
+      border-radius: 8px;
+      font-size: 0.76rem;
+      white-space: nowrap;
+    }
+
+    .timeline-content > p {
+      margin-top: 13px;
+      font-size: 0.9rem;
+    }
+
+    .responsibility-list {
+      padding-left: 19px;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .responsibility-list li {
+      padding-left: 4px;
+      margin: 7px 0;
+    }
+
+    .section-hint {
+      display: inline-block;
+      color: #a8c0e9;
+      font-size: 0.81rem;
+      margin-top: 14px;
+      padding: 9px 12px;
+      border: 1px dashed rgba(153, 178, 220, 0.28);
+      border-radius: 10px;
+    }
+
+    /* =====================================================
+       7. EDUCATION & CERTIFICATIONS
+    ===================================================== */
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .education-card {
+      height: 100%;
+      padding: 25px;
+    }
+
+    .education-card-top {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+    }
+
+    .education-card h3 {
+      margin-bottom: 7px;
+    }
+
+    .education-institution {
+      color: #a8c2ff;
+      font-weight: 600;
+      font-size: 0.89rem;
+    }
+
+    .education-details {
+      margin-top: 14px;
+      font-size: 0.86rem;
+    }
+
+    .education-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 17px;
+    }
+
+    .education-meta span {
+      color: #bdcce3;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 5px 9px;
+      font-size: 0.75rem;
+    }
+
+    /* =====================================================
+       8. LANGUAGES
+    ===================================================== */
+
+    .languages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .language-card {
+      padding: 22px;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .language-symbol {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: rgba(77, 227, 232, 0.08);
+      color: var(--cyan);
+      border: 1px solid rgba(77, 227, 232, 0.17);
+      font-weight: 800;
+      font-size: 1.05rem;
+    }
+
+    .language-card h3 {
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+
+    .language-level {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    /* =====================================================
+       9. SKILLS
+    ===================================================== */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 19px;
+    }
+
+    .skill-card {
+      padding: 24px;
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(91, 140, 255, 0.4);
+    }
+
+    .skill-card .icon {
+      margin-bottom: 18px;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 9px;
+    }
+
+    .skill-card p {
+      font-size: 0.87rem;
+    }
+
+    /* =====================================================
+       10. PROJECTS & VISUAL PORTFOLIO
+    ===================================================== */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .project-card {
+      overflow: hidden;
+    }
+
+    .project-visual {
+      padding: 20px;
+      min-height: 260px;
+      background:
+        radial-gradient(
+          circle at 80% 10%,
+          rgba(91, 140, 255, 0.15),
+          transparent 35%
+        ),
+        #0d1729;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .browser-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    .browser-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #52617d;
+    }
+
+    .browser-title {
+      margin-left: 8px;
+      color: #7e92b3;
+      font-size: 0.72rem;
+    }
+
+    .mini-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .mini-stat {
+      padding: 12px;
+      border: 1px solid rgba(153, 178, 220, 0.13);
+      background: rgba(255, 255, 255, 0.025);
+      border-radius: 10px;
+    }
+
+    .mini-stat small {
+      display: block;
+      color: #879bbb;
+      font-size: 0.65rem;
+      margin-bottom: 6px;
+    }
+
+    .mini-stat strong {
+      font-size: 1.05rem;
+      font-family: "Manrope", sans-serif;
+    }
+
+    .chart-area {
+      height: 105px;
+      margin-top: 14px;
+      border: 1px solid rgba(153, 178, 220, 0.12);
+      border-radius: 10px;
+      overflow: hidden;
+      padding: 12px 12px 0;
+      display: flex;
+      align-items: flex-end;
+      gap: 9px;
+      background:
+        repeating-linear-gradient(
+          to bottom,
+          transparent 0,
+          transparent 24px,
+          rgba(153, 178, 220, 0.09) 25px
+        );
+    }
+
+    .chart-bar {
+      flex: 1;
+      min-width: 5px;
+      border-radius: 5px 5px 0 0;
+      background: linear-gradient(
+        to top,
+        rgba(91, 140, 255, 0.45),
+        rgba(77, 227, 232, 0.92)
+      );
+    }
+
+    .support-layout {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 12px;
+    }
+
+    .support-sidebar,
+    .support-content {
+      border: 1px solid rgba(153, 178, 220, 0.13);
+      border-radius: 10px;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .support-menu-line {
+      height: 7px;
+      border-radius: 10px;
+      background: #243654;
+      margin: 10px 0;
+    }
+
+    .support-menu-line.active {
+      background: linear-gradient(90deg, #4e81ec, #4de3e8);
+    }
+
+    .ticket {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(153, 178, 220, 0.1);
+      color: #a9bad6;
+      font-size: 0.67rem;
+    }
+
+    .ticket:last-child {
+      border-bottom: 0;
+    }
+
+    .ticket-status {
+      color: #80e7c2;
+      white-space: nowrap;
+    }
+
+    .workflow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      flex-wrap: wrap;
+      min-height: 150px;
+    }
+
+    .workflow-node {
+      display: grid;
+      place-items: center;
+      text-align: center;
+      min-width: 90px;
+      min-height: 68px;
+      padding: 10px;
+      border: 1px solid rgba(91, 140, 255, 0.35);
+      border-radius: 12px;
+      background: rgba(91, 140, 255, 0.08);
+      color: #d6e4ff;
+      font-size: 0.72rem;
+    }
+
+    .workflow-arrow {
+      color: var(--cyan);
+      font-size: 1.15rem;
+    }
+
+    .project-content {
+      padding: 23px;
+    }
+
+    .project-content h3 {
+      margin-bottom: 10px;
+    }
+
+    .project-content p {
+      font-size: 0.88rem;
+    }
+
+    .sample-disclaimer {
+      margin-top: 14px;
+      color: #a9bad6;
+      font-size: 0.75rem;
+      border-left: 2px solid var(--cyan);
+      padding-left: 10px;
+    }
+
+    /* =====================================================
+       11. COMMUNICATION & AUTOMATION SERVICES
+    ===================================================== */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 19px;
+    }
+
+    .service-card {
+      padding: 25px;
+    }
+
+    .service-card .icon {
+      margin-bottom: 17px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 0.86rem;
+    }
+
+    .service-note {
+      margin-top: 26px;
+      padding: 18px 20px;
+      border: 1px solid rgba(77, 227, 232, 0.17);
+      border-radius: 13px;
+      background: rgba(77, 227, 232, 0.035);
+      font-size: 0.88rem;
+    }
+
+    .service-note strong {
+      color: #d9faff;
+    }
+
+    /* =====================================================
+       12. WORK APPROACH
+    ===================================================== */
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    .approach-card {
+      padding: 22px;
+    }
+
+    .approach-number {
+      display: inline-block;
+      color: var(--cyan);
+      font-family: "Manrope", sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .approach-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .approach-card p {
+      font-size: 0.84rem;
+    }
+
+    /* =====================================================
+       13. CONTACT
+    ===================================================== */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .contact-copy p {
+      margin-bottom: 20px;
+    }
+
+    .contact-methods {
+      display: grid;
+      gap: 13px;
+      margin-top: 26px;
+    }
+
+    .contact-method {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 15px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .contact-method .icon {
+      width: 42px;
+      height: 42px;
+      font-size: 1rem;
+    }
+
+    .contact-method small {
+      display: block;
+      color: var(--muted);
+      font-size: 0.75rem;
+      margin-bottom: 3px;
+    }
+
+    .contact-method strong {
+      font-size: 0.88rem;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-form {
+      padding: 27px;
+    }
+
+    .contact-form h3 {
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 17px;
+    }
+
+    .form-group label {
+      display: block;
+      color: #c5d3e9;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      color: var(--text);
+      background: #0b1425;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 13px;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--blue);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 125px;
+    }
+
+    .form-group select option {
+      background: #0b1425;
+    }
+
+    .form-help {
+      margin-top: 12px;
+      font-size: 0.76rem;
+    }
+
+    /* =====================================================
+       14. FOOTER
+    ===================================================== */
+
+    .footer {
+      padding: 27px 0;
+      border-top: 1px solid var(--border);
+      background: rgba(0, 0, 0, 0.12);
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer p,
+    .footer a {
+      font-size: 0.81rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 500;
+      width: 43px;
+      height: 43px;
+      border-radius: 13px;
+      border: 1px solid var(--border);
+      background: #15233a;
+      color: white;
+      cursor: pointer;
+      display: none;
+      place-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .back-to-top.visible {
+      display: grid;
+    }
+
+    /* =====================================================
+       15. SCROLL ANIMATIONS
+    ===================================================== */
+
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+
+    .js-ready .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition:
+        opacity 0.65s ease,
+        transform 0.65s ease;
+    }
+
+    .js-ready .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .js-ready .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* =====================================================
+       16. RESPONSIVE LAYOUT
+    ===================================================== */
+
+    @media (max-width: 1050px) {
+      .nav-links {
+        gap: 13px;
+      }
+
+      .nav-links a {
+        font-size: 0.77rem;
+      }
+
+      .hero-grid {
+        gap: 35px;
+      }
+
+      .approach-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 850px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .navbar {
+        position: relative;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: calc(100% + 1px);
+        left: -22px;
+        right: -22px;
+        padding: 18px 22px 23px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: #0b1221;
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 12px 0;
+        font-size: 0.9rem;
+      }
+
+      .nav-cta {
+        margin-top: 8px;
+        text-align: center;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 70px;
+      }
+
+      .hero-visual {
+        max-width: 570px;
+      }
+
+      .skills-grid,
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .languages-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .capability-row {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 30px, var(--container));
+      }
+
+      .section {
+        padding: 74px 0;
+      }
+
+      h1 {
+        font-size: clamp(2.6rem, 13vw, 3.7rem);
+        letter-spacing: -2px;
+      }
+
+      h2 {
+        font-size: 2.1rem;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 58px 0 66px;
+      }
+
+      .hero-description {
+        font-size: 0.97rem;
+      }
+
+      .profile-card {
+        padding: 18px;
+      }
+
+      .profile-photo-wrap {
+        width: 86px;
+        height: 86px;
+        border-radius: 19px;
+      }
+
+      .profile-card h2 {
+        font-size: 1.15rem;
+      }
+
+      .profile-highlights {
+        gap: 9px;
+      }
+
+      .highlight {
+        padding: 10px;
+      }
+
+      .highlight strong {
+        font-size: 0.8rem;
+      }
+
+      .highlight span {
+        font-size: 0.71rem;
+      }
+
+      .education-grid,
+      .languages-grid,
+      .skills-grid,
+      .projects-grid,
+      .services-grid,
+      .approach-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-item {
+        grid-template-columns: 32px 1fr;
+        gap: 12px;
+      }
+
+      .timeline::before {
+        left: 15px;
+      }
+
+      .timeline-marker {
+        width: 32px;
+        height: 32px;
+        border-radius: 10px;
+        font-size: 0.85rem;
+      }
+
+      .timeline-content {
+        padding: 19px;
+      }
+
+      .timeline-date {
+        white-space: normal;
+      }
+
+      .education-card,
+      .service-card,
+      .skill-card,
+      .approach-card {
+        padding: 20px;
+      }
+
+      .project-visual {
+        padding: 14px;
+      }
+
+      .mini-stat {
+        padding: 8px;
+      }
+
+      .mini-stat strong {
+        font-size: 0.86rem;
+      }
+
+      .mini-stat small {
+        font-size: 0.6rem;
+      }
+
+      .workflow {
+        gap: 7px;
+      }
+
+      .workflow-node {
+        min-width: 76px;
+        font-size: 0.67rem;
+      }
+
+      .contact-form {
+        padding: 20px;
+      }
+
+      .footer-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
-<header class="nav-wrap">
-  <nav class="nav container" aria-label="Main navigation">
-    <a class="brand" href="#home" aria-label="Kannan Reddy home">
-      <span class="brand-mark">KR</span>
-      <span>KANNAN REDDY<small>TECHNOLOGY & AUTOMATION</small></span>
-    </a>
+  <!-- ===================================================
+       NAVIGATION
+  ==================================================== -->
 
-    <button class="menu-btn" id="menuBtn" aria-label="Open navigation"
-      aria-expanded="false" aria-controls="navLinks">☰</button>
+  <header class="site-header">
+    <div class="container navbar">
 
-    <div class="nav-links" id="navLinks">
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#analytics">Analytics</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
+      <a class="brand" href="#home" aria-label="Kannan Reddy home">
+        <span class="brand-mark">KR</span>
+        <span>Kannan Reddy</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        ☰
+      </button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#languages">Languages</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Portfolio</a>
+        <a href="#services">Services</a>
+        <a href="#contact" class="nav-cta">Contact Me ↗</a>
+      </nav>
+
     </div>
+  </header>
 
-    <a class="btn btn-primary nav-cta" href="#contact">Let's Connect ↗</a>
-  </nav>
-</header>
 
-<main>
+  <main>
 
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="container">
-    <div class="hero-grid">
-      <div class="hero-content reveal">
-        <div class="availability tag"><span class="dot"></span> Open to opportunities & freelance projects</div>
+    <!-- =================================================
+         HERO
+    ================================================== -->
 
-        <p class="eyebrow">BUSINESS SYSTEMS · ANALYTICS · AUTOMATION</p>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
 
-        <h1>Making work smarter with <span class="accent">technology.</span></h1>
+        <div class="hero-copy reveal">
 
-        <p class="hero-subtitle">
-          Hello, I'm <strong>Kannan Reddy.</strong>
-        </p>
+          <div class="availability">
+            <span class="availability-dot"></span>
+            Open to career opportunities
+          </div>
 
-        <p class="hero-copy">
-          I focus on practical technology solutions, business analytics,
-          customer support operations, and workflow automation that help
-          teams simplify processes and make better decisions.
-        </p>
+          <h1>
+            Hi, I'm
+            <span class="gradient-text">Kannan Reddy.</span>
+            <br>
+            Technology.
+            Integration.
+            Solutions.
+          </h1>
 
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#projects">Explore My Work ↗</a>
-          <a class="btn btn-secondary" href="#contact">Contact Me</a>
+          <p class="hero-description">
+            I’m interested in technology-driven solutions that connect
+            systems, simplify workflows, improve customer communication,
+            and make business operations more efficient.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#experience" class="btn btn-primary">
+              Explore My Experience <span>↘</span>
+            </a>
+
+            <a href="#contact" class="btn btn-secondary">
+              Let's Connect <span>↗</span>
+            </a>
+          </div>
+
+          <p class="hero-note">
+            <strong>Career first.</strong>
+            Also open to selected freelance projects involving
+            integrations and automation.
+          </p>
+
         </div>
 
-        <div class="hero-tags">
-          <span class="tag">Business Analytics</span>
-          <span class="tag">Customer Success</span>
-          <span class="tag">Workflow Automation</span>
-        </div>
-      </div>
 
-      <div class="hero-visual reveal">
-        <div class="visual-glow"></div>
-        <div class="hero-orbit" aria-hidden="true">⌘</div>
+        <div class="hero-visual reveal">
 
-        <div class="code-window">
-          <div class="window-top">
-            <span class="window-dot"></span>
-            <span class="window-dot"></span>
-            <span class="window-dot"></span>
-            <span class="window-title">portfolio.config</span>
-          </div>
+          <div class="hero-glow"></div>
 
-          <div class="code-body" aria-label="Technology-themed code illustration">
-            <div class="code-line"><span class="code-purple">const</span> <span class="code-blue">professional</span> = {</div>
-            <div class="code-line">  <span class="code-green">name</span>: <span class="code-white">"Kannan Reddy"</span>,</div>
-            <div class="code-line">  <span class="code-green">focus</span>: [</div>
-            <div class="code-line">    <span class="code-white">"Analytics"</span>,</div>
-            <div class="code-line">    <span class="code-white">"Automation"</span>,</div>
-            <div class="code-line">    <span class="code-white">"Customer Success"</span></div>
-            <div class="code-line">  ],</div>
-            <div class="code-line">  <span class="code-green">mindset</span>: <span class="code-white">"Build. Improve. Measure."</span>,</div>
-            <div class="code-line">  <span class="code-green">status</span>: <span class="code-blue">"Ready to collaborate"</span></div>
-            <div class="code-line">};</div>
-          </div>
+          <div class="profile-card card">
 
-          <div class="code-status">
-            <span><span class="dot" style="display:inline-block;margin-right:6px"></span> Systems thinking</span>
-            <span>Version 1.0</span>
-          </div>
-        </div>
-      </div>
-    </div>
+            <div class="profile-top">
 
-    <div class="hero-stats reveal">
-      <div class="hero-stat"><strong>Data-driven</strong><span>Clearer decisions</span></div>
-      <div class="hero-stat"><strong>Process-focused</strong><span>Smarter workflows</span></div>
-      <div class="hero-stat"><strong>Customer-first</strong><span>Better experiences</span></div>
-    </div>
-  </div>
-</section>
+              <div class="profile-photo-wrap">
 
-<!-- ABOUT -->
-<section class="section" id="about">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">ABOUT ME</p>
-      <h2>Technology with a <span class="accent">practical purpose.</span></h2>
-      <p>Connecting business needs, operational processes, and useful digital solutions.</p>
-      <div class="section-line"></div>
-    </div>
+                <!--
+                  The primary image URL is configured in JavaScript.
+                  If it fails, a professional fallback avatar is shown.
+                -->
 
-    <div class="about-grid">
-      <div class="about-panel reveal">
-        <div class="about-monogram">KR</div>
-        <h3>Kannan Reddy</h3>
-        <p>Technology, analytics & operations</p>
-        <div class="about-badges">
-          <span class="tag">Problem Solving</span>
-          <span class="tag">Process Improvement</span>
-          <span class="tag">Digital Tools</span>
-        </div>
-      </div>
+                <img
+                  id="heroProfileImage"
+                  class="profile-photo"
+                  alt="Kannan Reddy profile photograph"
+                  width="112"
+                  height="112"
+                  loading="eager"
+                  decoding="async"
+                >
 
-      <div class="about-copy reveal">
-        <h3>I believe good technology should make complex work easier.</h3>
-        <p>
-          My professional focus is on using digital tools and structured
-          thinking to improve the way business processes operate. This
-          portfolio demonstrates concepts for reporting, service operations,
-          and automation.
-        </p>
-        <p>
-          I aim to make information easier to understand, reduce repetitive
-          work where possible, and design processes that are more consistent,
-          measurable, and easier to maintain.
-        </p>
+                <div
+                  id="heroProfileFallback"
+                  class="profile-photo-fallback"
+                  role="img"
+                  aria-label="Kannan Reddy initials avatar"
+                >
+                  KR
+                </div>
 
-        <ul class="check-list">
-          <li><span>✓</span> Turning operational data into readable dashboards.</li>
-          <li><span>✓</span> Organizing customer support and service workflows.</li>
-          <li><span>✓</span> Mapping repetitive tasks into automation opportunities.</li>
-          <li><span>✓</span> Communicating processes through clear documentation.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section class="section" id="services" style="background:#ffffff03;border-block:1px solid #ffffff08">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">WHAT I CAN HELP WITH</p>
-      <h2>Services built around <span class="accent">real business needs.</span></h2>
-      <p>Practical areas for collaboration, consulting, and portfolio development.</p>
-      <div class="section-line"></div>
-    </div>
-
-    <div class="grid-3">
-      <article class="card reveal">
-        <div class="card-icon">▥</div>
-        <h3>Business Analytics</h3>
-        <p>Build clear reports and dashboards that organize key performance indicators, trends, and operational information.</p>
-        <div class="pills"><span class="pill">Dashboards</span><span class="pill">Excel</span><span class="pill">Reporting</span></div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-icon">◎</div>
-        <h3>Customer Support Operations</h3>
-        <p>Structure support metrics, ticket workflows, service quality tracking, and customer experience reporting.</p>
-        <div class="pills"><span class="pill">Ticket Metrics</span><span class="pill">CSAT</span><span class="pill">SLA Tracking</span></div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-icon">⌘</div>
-        <h3>Workflow Automation</h3>
-        <p>Identify repetitive tasks and design connected workflows for data collection, notifications, and reporting.</p>
-        <div class="pills"><span class="pill">Process Mapping</span><span class="pill">Automation</span><span class="pill">Integrations</span></div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-icon">▤</div>
-        <h3>Reporting & Documentation</h3>
-        <p>Organize operational information into consistent reports, standard operating procedures, and reusable templates.</p>
-        <div class="pills"><span class="pill">SOPs</span><span class="pill">Documentation</span></div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-icon">↗</div>
-        <h3>Process Improvement</h3>
-        <p>Map existing processes, identify friction points, and outline measurable opportunities for improvement.</p>
-        <div class="pills"><span class="pill">Process Design</span><span class="pill">KPIs</span></div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-icon">◇</div>
-        <h3>Digital Business Systems</h3>
-        <p>Explore ways to connect spreadsheets, customer records, forms, and reporting into a more organized system.</p>
-        <div class="pills"><span class="pill">CRM Concepts</span><span class="pill">Data Flows</span></div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ANALYTICS DASHBOARD -->
-<section class="section" id="analytics">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">VISUAL PORTFOLIO</p>
-      <h2>From raw numbers to <span class="accent">useful insight.</span></h2>
-      <p>Custom dashboard concepts for business intelligence and customer support. All figures shown are illustrative sample data.</p>
-      <div class="section-line"></div>
-    </div>
-
-    <div class="grid-2">
-      <!-- Analytics -->
-      <article class="card dash-card reveal">
-        <div class="dash-top">
-          <div>
-            <p class="eyebrow">BUSINESS INTELLIGENCE</p>
-            <h3 style="margin-top:5px">Performance Overview</h3>
-          </div>
-          <span class="tag">Concept UI</span>
-        </div>
-
-        <div class="dash-content">
-          <div class="metric-grid">
-            <div class="metric"><span>Revenue</span><strong>$48.2K</strong><em>↗ 12.8%</em></div>
-            <div class="metric"><span>Conversion</span><strong>6.84%</strong><em>↗ 2.1%</em></div>
-            <div class="metric"><span>Active users</span><strong>2,840</strong><em>↗ 8.4%</em></div>
-          </div>
-
-          <div class="chart-box">
-            <div class="chart-caption"><span>Performance trend</span><span>Last 4 weeks</span></div>
-            <svg class="chart" viewBox="0 0 420 160" role="img" aria-label="Sample business trend line">
-              <defs>
-                <linearGradient id="areaFill" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#69adff" stop-opacity=".32"/>
-                  <stop offset="100%" stop-color="#69adff" stop-opacity="0"/>
-                </linearGradient>
-              </defs>
-              <g stroke="#273750" stroke-width="1">
-                <path d="M10 25H410M10 60H410M10 95H410M10 130H410"/>
-              </g>
-              <path d="M10 122 L48 102 L86 109 L124 78 L162 86 L200 58 L238 68 L276 40 L314 49 L352 28 L410 17 L410 140 L10 140Z" fill="url(#areaFill)"/>
-              <path d="M10 122 L48 102 L86 109 L124 78 L162 86 L200 58 L238 68 L276 40 L314 49 L352 28 L410 17" fill="none" stroke="#69adff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="410" cy="17" r="5" fill="#4ce0c0"/>
-            </svg>
-            <div class="chart-caption"><span>Week 1</span><span>Week 2</span><span>Week 3</span><span>Week 4</span></div>
-          </div>
-
-          <div class="legend">
-            <span><i style="background:#69adff"></i>Performance</span>
-            <span><i style="background:#4ce0c0"></i>Latest point</span>
-          </div>
-          <p class="caveat">Illustrative dashboard only. Replace the figures with verified data before presenting this as a real client result.</p>
-        </div>
-      </article>
-
-      <!-- Customer support -->
-      <article class="card dash-card reveal">
-        <div class="dash-top">
-          <div>
-            <p class="eyebrow">CUSTOMER EXPERIENCE</p>
-            <h3 style="margin-top:5px">Support Health</h3>
-          </div>
-          <span class="status">Service overview</span>
-        </div>
-
-        <div class="dash-content">
-          <div class="metric-grid">
-            <div class="metric"><span>Tickets resolved</span><strong>1,284</strong><em>Volume</em></div>
-            <div class="metric"><span>First reply</span><strong>4m 32s</strong><em>Response</em></div>
-            <div class="metric"><span>CSAT score</span><strong>94%</strong><em>Sample score</em></div>
-          </div>
-
-          <div class="chart-box">
-            <div class="chart-caption"><span>Ticket distribution</span><span>Sample</span></div>
-            <div class="bar-row">
-              <span>Resolved</span><div class="bar-track"><div class="bar-fill" style="width:78%"></div></div><b>78%</b>
-            </div>
-            <div class="bar-row">
-              <span>In progress</span><div class="bar-track"><div class="bar-fill" style="width:16%;background:#69adff"></div></div><b>16%</b>
-            </div>
-            <div class="bar-row">
-              <span>Attention</span><div class="bar-track"><div class="bar-fill" style="width:6%;background:#a698ff"></div></div><b>6%</b>
-            </div>
-            <div style="border-top:1px solid var(--line);margin-top:22px;padding-top:17px">
-              <div style="display:flex;justify-content:space-between;gap:12px;font-size:11px">
-                <span>Customer satisfaction target</span><strong style="color:var(--teal)">90%</strong>
               </div>
-              <div class="progress-track"><div class="bar-fill" style="width:94%;height:100%"></div></div>
-              <p style="font-size:10px;color:var(--muted)">Sample CSAT score: 94% · Target shown for illustration.</p>
+
+              <div>
+                <h2>Kannan Reddy</h2>
+                <p class="profile-role">
+                  Technology & Integration
+                </p>
+                <p class="profile-role">
+                  Professional Portfolio
+                </p>
+              </div>
+
+            </div>
+
+            <div class="profile-divider"></div>
+
+            <p class="profile-label">
+              Areas of professional interest
+            </p>
+
+            <div class="profile-highlights">
+
+              <div class="highlight">
+                <strong>Integrations</strong>
+                <span>APIs & connected systems</span>
+              </div>
+
+              <div class="highlight">
+                <strong>Communications</strong>
+                <span>Messaging & telephony</span>
+              </div>
+
+              <div class="highlight">
+                <strong>Automation</strong>
+                <span>Workflows & operations</span>
+              </div>
+
+              <div class="highlight">
+                <strong>Customer Experience</strong>
+                <span>Support & engagement</span>
+              </div>
+
+            </div>
+
+            <div class="profile-tags">
+              <span class="profile-tag">API Integration</span>
+              <span class="profile-tag">Business Automation</span>
+              <span class="profile-tag">Customer Workflows</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =================================================
+         CAPABILITY STRIP
+    ================================================== -->
+
+    <div class="capability-strip">
+      <div class="container capability-row">
+
+        <div class="capability-item">
+          <span>✦</span> System Integration
+        </div>
+
+        <div class="capability-item">
+          <span>⌘</span> Workflow Automation
+        </div>
+
+        <div class="capability-item">
+          <span>◎</span> Communication Technology
+        </div>
+
+        <div class="capability-item">
+          <span>↗</span> Customer Experience
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- =================================================
+         ABOUT
+    ================================================== -->
+
+    <section class="section" id="about">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">About Me</span>
+          <h2>
+            Connecting technology
+            with <span class="gradient-text">real-world needs.</span>
+          </h2>
+          <p class="section-description">
+            A professional introduction focused on technology,
+            practical problem-solving, communication platforms,
+            and efficient business processes.
+          </p>
+        </div>
+
+        <div class="about-grid">
+
+          <div class="about-copy reveal">
+
+            <p>
+              I’m Kannan Reddy, and this portfolio presents my
+              professional background, areas of interest, skills,
+              education, and selected technology concepts.
+            </p>
+
+            <p>
+              I’m interested in solutions that help applications,
+              communication channels, and business processes work
+              together more effectively. My professional focus is on
+              learning, solving problems, supporting reliable systems,
+              and contributing to useful outcomes for teams and customers.
+            </p>
+
+            <p>
+              Alongside my career goals, I’m open to suitable project-based
+              opportunities in API integrations, business communication
+              technology, and workflow automation.
+            </p>
+
+            <div class="about-points">
+
+              <div class="about-point">
+                <span class="checkmark">✓</span>
+                <div>
+                  <strong>Practical problem-solving</strong>
+                  <p>
+                    Understanding requirements and identifying
+                    appropriate technical approaches.
+                  </p>
+                </div>
+              </div>
+
+              <div class="about-point">
+                <span class="checkmark">✓</span>
+                <div>
+                  <strong>Connected systems</strong>
+                  <p>
+                    Exploring ways to connect APIs, communication tools,
+                    and operational workflows.
+                  </p>
+                </div>
+              </div>
+
+              <div class="about-point">
+                <span class="checkmark">✓</span>
+                <div>
+                  <strong>Continuous learning</strong>
+                  <p>
+                    Building knowledge in relevant technologies,
+                    integration patterns, and customer-focused solutions.
+                  </p>
+                </div>
+              </div>
+
             </div>
           </div>
-          <p class="caveat">Concept metrics only—not verified customer support performance or client results.</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
 
-<!-- AUTOMATION -->
-<section class="section" id="automation" style="background:#ffffff03;border-block:1px solid #ffffff08">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">CONNECTED OPERATIONS</p>
-      <h2>Designing <span class="accent">smarter workflows.</span></h2>
-      <p>An example of how a manual process could be structured into a traceable workflow.</p>
-      <div class="section-line"></div>
-    </div>
 
-    <article class="card reveal">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap">
-        <div>
-          <p class="eyebrow">WORKFLOW CONCEPT</p>
-          <h3 style="margin-top:7px">From request to resolution</h3>
-        </div>
-        <span class="tag">Process map</span>
-      </div>
+          <aside class="about-panel card reveal">
 
-      <div class="workflow">
-        <div class="workflow-step">
-          <div class="workflow-icon">↳</div>
-          <strong>01. Capture</strong>
-          <small>Receive a request from a form, inbox, or CRM.</small>
-        </div>
-        <div class="workflow-step">
-          <div class="workflow-icon">⌁</div>
-          <strong>02. Validate</strong>
-          <small>Check required data and apply process rules.</small>
-        </div>
-        <div class="workflow-step">
-          <div class="workflow-icon">⚙</div>
-          <strong>03. Route</strong>
-          <small>Assign an owner and appropriate priority.</small>
-        </div>
-        <div class="workflow-step">
-          <div class="workflow-icon">✓</div>
-          <strong>04. Report</strong>
-          <small>Update status and surface operational metrics.</small>
+            <h3>Professional Snapshot</h3>
+
+            <div class="info-row">
+              <span class="info-label">Name</span>
+              <span class="info-value">Kannan Reddy</span>
+            </div>
+
+            <div class="info-row">
+              <span class="info-label">Professional focus</span>
+              <span class="info-value">Technology & Integration</span>
+            </div>
+
+            <div class="info-row">
+              <span class="info-label">Career interest</span>
+              <span class="info-value">Relevant job opportunities</span>
+            </div>
+
+            <div class="info-row">
+              <span class="info-label">Project interest</span>
+              <span class="info-value">Selected freelance work</span>
+            </div>
+
+            <div class="info-row">
+              <span class="info-label">Core themes</span>
+              <span class="info-value">
+                APIs, communications, automation
+              </span>
+            </div>
+
+            <div class="info-row">
+              <span class="info-label">Portfolio purpose</span>
+              <span class="info-value">Career & professional networking</span>
+            </div>
+
+          </aside>
+
         </div>
       </div>
+    </section>
 
-      <p class="caveat">This is a workflow design illustration. It does not execute automation or connect to external services.</p>
-    </article>
-  </div>
-</section>
 
-<!-- PROJECTS -->
-<section class="section" id="projects">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">FEATURED WORK</p>
-      <h2>Concepts built around <span class="accent">business impact.</span></h2>
-      <p>Example case studies you can develop into real projects and replace with verified results.</p>
-      <div class="section-line"></div>
-    </div>
+    <!-- =================================================
+         WORK EXPERIENCE
+         Replace the clearly marked sample fields with
+         verified employer, title, and employment dates.
+    ================================================== -->
 
-    <div class="grid-3">
-      <article class="card project-card reveal">
-        <div class="project-number">PROJECT / 01</div>
-        <div class="card-icon">▥</div>
-        <h3>Business Performance Dashboard</h3>
-        <p>
-          A concept for consolidating business KPIs, performance trends,
-          and recurring reporting into a readable dashboard.
+    <section class="section section-alt" id="experience">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">Career History</span>
+          <h2>
+            Work <span class="gradient-text">Experience.</span>
+          </h2>
+          <p class="section-description">
+            A dedicated section for professional roles, responsibilities,
+            technical contributions, and career progression.
+          </p>
+        </div>
+
+
+        <div class="timeline">
+
+          <!-- EXPERIENCE ENTRY 1
+               Replace the title, employer, dates, and bullets
+               with your actual work experience.
+          -->
+
+          <article class="timeline-item reveal">
+
+            <div class="timeline-marker" aria-hidden="true">
+              ↗
+            </div>
+
+            <div class="timeline-content card">
+
+              <div class="timeline-top">
+
+                <div>
+                  <h3>[Your Most Recent Job Title]</h3>
+                  <div class="timeline-company">
+                    [Company Name]
+                  </div>
+                </div>
+
+                <span class="timeline-date">
+                  [Start Month Year] – [End Month Year / Present]
+                </span>
+
+              </div>
+
+              <p>
+                Add a concise summary of your role, the team or business
+                function you supported, and the main purpose of your work.
+              </p>
+
+              <ul class="responsibility-list">
+                <li>
+                  Describe your primary responsibility and day-to-day work.
+                </li>
+                <li>
+                  Mention relevant systems, applications, or tools you
+                  genuinely used in this role.
+                </li>
+                <li>
+                  Explain a problem you helped solve or a process you
+                  contributed to improving.
+                </li>
+              </ul>
+
+              <div class="tag-list">
+                <span class="tag">[Relevant Skill]</span>
+                <span class="tag">[Relevant Tool]</span>
+                <span class="tag">[Relevant Responsibility]</span>
+              </div>
+
+            </div>
+          </article>
+
+
+          <!-- EXPERIENCE ENTRY 2 -->
+
+          <article class="timeline-item reveal">
+
+            <div class="timeline-marker" aria-hidden="true">
+              ◈
+            </div>
+
+            <div class="timeline-content card">
+
+              <div class="timeline-top">
+
+                <div>
+                  <h3>[Previous Job Title]</h3>
+                  <div class="timeline-company">
+                    [Previous Company Name]
+                  </div>
+                </div>
+
+                <span class="timeline-date">
+                  [Start Month Year] – [End Month Year]
+                </span>
+
+              </div>
+
+              <p>
+                Summarize your previous position, the responsibilities
+                you held, and the experience you gained.
+              </p>
+
+              <ul class="responsibility-list">
+                <li>
+                  Add a responsibility relevant to the role you are seeking.
+                </li>
+                <li>
+                  Mention any genuine customer, operational, technical,
+                  or coordination work you performed.
+                </li>
+                <li>
+                  Include a measurable achievement only when you can
+                  support it with accurate information.
+                </li>
+              </ul>
+
+              <div class="tag-list">
+                <span class="tag">[Skill]</span>
+                <span class="tag">[Tool]</span>
+                <span class="tag">[Area of Work]</span>
+              </div>
+
+            </div>
+          </article>
+
+
+          <!-- EXPERIENCE ENTRY 3
+               Delete this card if you have only two roles.
+          -->
+
+          <article class="timeline-item reveal">
+
+            <div class="timeline-marker" aria-hidden="true">
+              ⌘
+            </div>
+
+            <div class="timeline-content card">
+
+              <div class="timeline-top">
+
+                <div>
+                  <h3>[Earlier Job Title or Internship]</h3>
+                  <div class="timeline-company">
+                    [Organization Name]
+                  </div>
+                </div>
+
+                <span class="timeline-date">
+                  [Start Month Year] – [End Month Year]
+                </span>
+
+              </div>
+
+              <p>
+                Add the details of an earlier role, internship, or other
+                relevant professional experience. If you do not have
+                another role, remove this card.
+              </p>
+
+              <ul class="responsibility-list">
+                <li>Describe the work you actually performed.</li>
+                <li>Include relevant skills you developed.</li>
+              </ul>
+
+            </div>
+          </article>
+
+        </div>
+
+        <p class="section-hint reveal">
+          Personalize the bracketed fields with your actual experience
+          before publishing your portfolio.
         </p>
-        <div class="pills"><span class="pill">Data Visualization</span><span class="pill">KPI Design</span><span class="pill">Reporting</span></div>
-        <div class="project-footer">Analytics concept <span>↗</span></div>
-      </article>
 
-      <article class="card project-card reveal">
-        <div class="project-number">PROJECT / 02</div>
-        <div class="card-icon">◎</div>
-        <h3>Customer Support Insights</h3>
-        <p>
-          A support reporting concept focused on ticket status, response
-          time, customer satisfaction, and workload visibility.
+      </div>
+    </section>
+
+
+    <!-- =================================================
+         EDUCATION
+    ================================================== -->
+
+    <section class="section" id="education">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">Academic Background</span>
+          <h2>
+            Education & <span class="gradient-text">Learning.</span>
+          </h2>
+          <p class="section-description">
+            Your academic qualifications and relevant professional
+            training belong here, where recruiters can find them easily.
+          </p>
+        </div>
+
+
+        <div class="education-grid">
+
+          <article class="education-card card reveal">
+
+            <div class="education-card-top">
+
+              <div class="icon" aria-hidden="true">▤</div>
+
+              <div>
+                <h3>[Highest Qualification]</h3>
+                <p class="education-institution">
+                  [College / University Name]
+                </p>
+              </div>
+
+            </div>
+
+            <p class="education-details">
+              Add your degree or qualification, specialization,
+              and any relevant academic details.
+            </p>
+
+            <div class="education-meta">
+              <span>[Start Year – Graduation Year]</span>
+              <span>[City / Location]</span>
+            </div>
+
+          </article>
+
+
+          <article class="education-card card reveal">
+
+            <div class="education-card-top">
+
+              <div class="icon" aria-hidden="true">⌂</div>
+
+              <div>
+                <h3>[Previous Qualification]</h3>
+                <p class="education-institution">
+                  [School / College Name]
+                </p>
+              </div>
+
+            </div>
+
+            <p class="education-details">
+              Add your previous qualification, institution, and
+              graduation or completion details.
+            </p>
+
+            <div class="education-meta">
+              <span>[Completion Year]</span>
+              <span>[Location]</span>
+            </div>
+
+          </article>
+
+
+          <article class="education-card card reveal">
+
+            <div class="education-card-top">
+
+              <div class="icon" aria-hidden="true">✧</div>
+
+              <div>
+                <h3>[Certification or Training]</h3>
+                <p class="education-institution">
+                  [Issuing Organization]
+                </p>
+              </div>
+
+            </div>
+
+            <p class="education-details">
+              Add a completed technical certification or professional
+              course relevant to your career. Remove this card if it
+              does not apply to you.
+            </p>
+
+            <div class="education-meta">
+              <span>[Year]</span>
+              <span>[Credential, if applicable]</span>
+            </div>
+
+          </article>
+
+
+          <article class="education-card card reveal">
+
+            <div class="education-card-top">
+
+              <div class="icon" aria-hidden="true">⌘</div>
+
+              <div>
+                <h3>Additional Learning</h3>
+                <p class="education-institution">
+                  Courses & Technical Development
+                </p>
+              </div>
+
+            </div>
+
+            <p class="education-details">
+              Optionally list relevant workshops, online courses,
+              technical training, or structured learning programs
+              you have actually completed.
+            </p>
+
+            <div class="education-meta">
+              <span>Professional Development</span>
+              <span>Technical Learning</span>
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =================================================
+         LANGUAGES
+    ================================================== -->
+
+    <section class="section section-alt" id="languages">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">Communication</span>
+          <h2>
+            Languages I <span class="gradient-text">Speak.</span>
+          </h2>
+          <p class="section-description">
+            List your actual spoken and written languages and proficiency
+            levels. This section is visible to recruiters and easy to edit.
+          </p>
+        </div>
+
+
+        <div class="languages-grid">
+
+          <article class="language-card card reveal">
+            <div class="language-symbol" aria-hidden="true">EN</div>
+            <div>
+              <h3>English</h3>
+              <p class="language-level">
+                [Your proficiency level]
+              </p>
+            </div>
+          </article>
+
+
+          <article class="language-card card reveal">
+            <div class="language-symbol" aria-hidden="true">తె</div>
+            <div>
+              <h3>Telugu</h3>
+              <p class="language-level">
+                [Your proficiency level]
+              </p>
+            </div>
+          </article>
+
+
+          <article class="language-card card reveal">
+            <div class="language-symbol" aria-hidden="true">हि</div>
+            <div>
+              <h3>Hindi</h3>
+              <p class="language-level">
+                [Your proficiency level]
+              </p>
+            </div>
+          </article>
+
+
+          <article class="language-card card reveal">
+            <div class="language-symbol" aria-hidden="true">ಕ</div>
+            <div>
+              <h3>Kannada</h3>
+              <p class="language-level">
+                [Your proficiency level]
+              </p>
+            </div>
+          </article>
+
+
+          <article class="language-card card reveal">
+            <div class="language-symbol" aria-hidden="true">அ</div>
+            <div>
+              <h3>Tamil</h3>
+              <p class="language-level">
+                [Your proficiency level]
+              </p>
+            </div>
+          </article>
+
+
+          <article class="language-card card reveal">
+            <div class="language-symbol" aria-hidden="true">文</div>
+            <div>
+              <h3>Other Language</h3>
+              <p class="language-level">
+                Replace with another language you speak
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="section-hint reveal">
+          Keep only the languages you know. Change each proficiency
+          label to your actual level, such as Native, Fluent,
+          Professional, Intermediate, or Basic.
         </p>
-        <div class="pills"><span class="pill">CSAT</span><span class="pill">Support Metrics</span><span class="pill">Service Quality</span></div>
-        <div class="project-footer">Customer operations concept <span>↗</span></div>
-      </article>
 
-      <article class="card project-card reveal">
-        <div class="project-number">PROJECT / 03</div>
-        <div class="card-icon">⌘</div>
-        <h3>Workflow Improvement Map</h3>
-        <p>
-          A process design concept connecting request intake, data
-          validation, assignment, resolution, and reporting.
+      </div>
+    </section>
+
+
+    <!-- =================================================
+         SKILLS
+    ================================================== -->
+
+    <section class="section" id="skills">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">Capabilities</span>
+          <h2>
+            Technology & <span class="gradient-text">Skills.</span>
+          </h2>
+          <p class="section-description">
+            A structured overview of relevant technical areas.
+            Retain the technologies that match your actual skills
+            and experience.
+          </p>
+        </div>
+
+
+        <div class="skills-grid">
+
+          <article class="skill-card card reveal">
+            <div class="icon" aria-hidden="true">⌘</div>
+            <h3>API & System Integration</h3>
+            <p>
+              Connecting applications and services through defined
+              interfaces, data exchange, and integration workflows.
+            </p>
+            <div class="tag-list">
+              <span class="tag">REST APIs</span>
+              <span class="tag">JSON</span>
+              <span class="tag">Webhooks</span>
+            </div>
+          </article>
+
+
+          <article class="skill-card card reveal">
+            <div class="icon" aria-hidden="true">◎</div>
+            <h3>Business Communications</h3>
+            <p>
+              Communication technology concepts for voice,
+              messaging, customer engagement, and notifications.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Telephony</span>
+              <span class="tag">SMS</span>
+              <span class="tag">Messaging APIs</span>
+            </div>
+          </article>
+
+
+          <article class="skill-card card reveal">
+            <div class="icon" aria-hidden="true">↯</div>
+            <h3>Workflow Automation</h3>
+            <p>
+              Identifying repetitive processes and exploring
+              opportunities to streamline operational workflows.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Process Mapping</span>
+              <span class="tag">Automation</span>
+              <span class="tag">Triggers</span>
+            </div>
+          </article>
+
+
+          <article class="skill-card card reveal">
+            <div class="icon" aria-hidden="true">▥</div>
+            <h3>Analytics & Reporting</h3>
+            <p>
+              Presenting business information in structured
+              dashboards and clear operational summaries.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Dashboards</span>
+              <span class="tag">KPIs</span>
+              <span class="tag">Reporting</span>
+            </div>
+          </article>
+
+
+          <article class="skill-card card reveal">
+            <div class="icon" aria-hidden="true">◉</div>
+            <h3>Customer Operations</h3>
+            <p>
+              Understanding customer workflows, support processes,
+              service handoffs, and communication touchpoints.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Support Workflows</span>
+              <span class="tag">CRM Concepts</span>
+              <span class="tag">Customer Experience</span>
+            </div>
+          </article>
+
+
+          <article class="skill-card card reveal">
+            <div class="icon" aria-hidden="true">⌁</div>
+            <h3>Technical Coordination</h3>
+            <p>
+              Documenting requirements, organizing implementation
+              steps, and communicating technical issues clearly.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Documentation</span>
+              <span class="tag">Troubleshooting</span>
+              <span class="tag">Problem Solving</span>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="section-hint reveal">
+          These are suggested skill categories, not verified certifications.
+          Remove any tool or technology you have not worked with.
         </p>
-        <div class="pills"><span class="pill">Process Mapping</span><span class="pill">Automation</span><span class="pill">Operations</span></div>
-        <div class="project-footer">Workflow concept <span>↗</span></div>
-      </article>
-    </div>
 
-    <p class="caveat" style="text-align:center;margin-top:23px">
-      These are portfolio concept projects. Add links, tools used, your contribution, and verified outcomes when real project work is available.
-    </p>
-  </div>
-</section>
+      </div>
+    </section>
 
-<!-- SKILLS -->
-<section class="section" id="skills" style="background:#ffffff03;border-block:1px solid #ffffff08">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">CAPABILITIES</p>
-      <h2>A foundation for <span class="accent">continuous improvement.</span></h2>
-      <p>Areas of focus. Update these to reflect your actual tools, experience, and proficiency.</p>
-      <div class="section-line"></div>
-    </div>
 
-    <div class="grid-2">
-      <article class="card skill-group reveal">
-        <h3><span style="color:var(--blue)">▥</span> Data & Reporting</h3>
+    <!-- =================================================
+         PORTFOLIO PROJECTS
+         Dashboard visuals below are conceptual mockups.
+    ================================================== -->
 
-        <div class="skill-item">
-          <div class="skill-name"><span>Dashboard Design</span><span>Core focus</span></div>
-          <div class="skill-track"><div class="skill-fill" style="width:85%"></div></div>
+    <section class="section section-alt" id="projects">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">Selected Work & Concepts</span>
+          <h2>
+            Practical ideas.
+            <span class="gradient-text">Connected systems.</span>
+          </h2>
+          <p class="section-description">
+            Visual concepts showing how analytics, customer support,
+            messaging, and automation workflows can be organized.
+            Replace these concepts with your own verified projects
+            whenever possible.
+          </p>
         </div>
-        <div class="skill-item">
-          <div class="skill-name"><span>Excel / Spreadsheets</span><span>Core focus</span></div>
-          <div class="skill-track"><div class="skill-fill" style="width:80%"></div></div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-name"><span>KPI Reporting</span><span>Core focus</span></div>
-          <div class="skill-track"><div class="skill-fill" style="width:82%"></div></div>
-        </div>
-        <p class="caveat">Visual proficiency bars are placeholders, not verified skill assessments.</p>
-      </article>
 
-      <article class="card skill-group reveal">
-        <h3><span style="color:var(--teal)">⌘</span> Operations & Systems</h3>
 
-        <div class="skill-item">
-          <div class="skill-name"><span>Process Mapping</span><span>Core focus</span></div>
-          <div class="skill-track"><div class="skill-fill" style="width:84%"></div></div>
+        <div class="projects-grid">
+
+          <!-- PROJECT 1: ANALYTICS DASHBOARD -->
+
+          <article class="project-card card reveal">
+
+            <div class="project-visual">
+
+              <div class="browser-bar">
+                <span class="browser-dot"></span>
+                <span class="browser-dot"></span>
+                <span class="browser-dot"></span>
+                <span class="browser-title">
+                  Business Insights / Dashboard Concept
+                </span>
+              </div>
+
+              <div class="mini-stat-grid">
+
+                <div class="mini-stat">
+                  <small>RECORDS</small>
+                  <strong>1,248</strong>
+                </div>
+
+                <div class="mini-stat">
+                  <small>ACTIVITY</small>
+                  <strong>76%</strong>
+                </div>
+
+                <div class="mini-stat">
+                  <small>STATUS</small>
+                  <strong>Active</strong>
+                </div>
+
+              </div>
+
+              <div
+                class="chart-area"
+                role="img"
+                aria-label="Illustrative analytics bar chart"
+              >
+                <span class="chart-bar" style="height:32%"></span>
+                <span class="chart-bar" style="height:45%"></span>
+                <span class="chart-bar" style="height:38%"></span>
+                <span class="chart-bar" style="height:65%"></span>
+                <span class="chart-bar" style="height:52%"></span>
+                <span class="chart-bar" style="height:78%"></span>
+                <span class="chart-bar" style="height:61%"></span>
+                <span class="chart-bar" style="height:88%"></span>
+                <span class="chart-bar" style="height:73%"></span>
+              </div>
+
+            </div>
+
+            <div class="project-content">
+              <h3>Business Analytics Dashboard</h3>
+              <p>
+                A conceptual dashboard layout for presenting operational
+                indicators, activity summaries, and business information
+                in a single interface.
+              </p>
+
+              <div class="tag-list">
+                <span class="tag">Analytics</span>
+                <span class="tag">Visualization</span>
+                <span class="tag">Reporting Concepts</span>
+              </div>
+
+              <p class="sample-disclaimer">
+                Design concept only. Figures shown are illustrative
+                and are not claimed business results.
+              </p>
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 2: CUSTOMER SUPPORT -->
+
+          <article class="project-card card reveal">
+
+            <div class="project-visual">
+
+              <div class="browser-bar">
+                <span class="browser-dot"></span>
+                <span class="browser-dot"></span>
+                <span class="browser-dot"></span>
+                <span class="browser-title">
+                  Customer Operations / Interface Concept
+                </span>
+              </div>
+
+              <div class="support-layout">
+
+                <div class="support-sidebar">
+                  <div class="support-menu-line active"></div>
+                  <div class="support-menu-line"></div>
+                  <div class="support-menu-line"></div>
+                  <div class="support-menu-line"></div>
+                  <div class="support-menu-line"></div>
+                </div>
+
+                <div class="support-content">
+
+                  <div class="ticket">
+                    <span>Customer enquiry</span>
+                    <span class="ticket-status">Open</span>
+                  </div>
+
+                  <div class="ticket">
+                    <span>Integration request</span>
+                    <span class="ticket-status">Review</span>
+                  </div>
+
+                  <div class="ticket">
+                    <span>Service follow-up</span>
+                    <span class="ticket-status">Pending</span>
+                  </div>
+
+                  <div class="ticket">
+                    <span>Customer update</span>
+                    <span class="ticket-status">Queued</span>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="project-content">
+              <h3>Customer Support Workflow</h3>
+              <p>
+                A conceptual interface for organizing customer enquiries,
+                tracking statuses, and coordinating follow-up activities.
+              </p>
+
+              <div class="tag-list">
+                <span class="tag">Customer Support</span>
+                <span class="tag">Operations</span>
+                <span class="tag">Workflow Design</span>
+              </div>
+
+              <p class="sample-disclaimer">
+                Illustrative interface only. It does not represent
+                a live support system or actual customer records.
+              </p>
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 3: INTEGRATION WORKFLOW -->
+
+          <article class="project-card card reveal">
+
+            <div class="project-visual">
+
+              <div class="browser-bar">
+                <span class="browser-dot"></span>
+                <span class="browser-dot"></span>
+                <span class="browser-dot"></span>
+                <span class="browser-title">
+                  API Integration / Workflow Concept
+                </span>
+              </div>
+
+              <div class="workflow">
+
+                <div class="workflow-node">
+                  <span>Customer</span>
+                  <span>Request</span>
+                </div>
+
+                <span class="workflow-arrow">→</span>
+
+                <div class="workflow-node">
+                  <span>API /</span>
+                  <span>Webhook</span>
+                </div>
+
+                <span class="workflow-arrow">→</span>
+
+                <div class="workflow-node">
+                  <span>Business</span>
+                  <span>System</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="project-content">
+              <h3>API Integration Flow</h3>
+              <p>
+                A conceptual flow demonstrating how a request can move
+                between a customer-facing channel, an integration layer,
+                and a connected business application.
+              </p>
+
+              <div class="tag-list">
+                <span class="tag">API Concepts</span>
+                <span class="tag">Webhooks</span>
+                <span class="tag">Data Flow</span>
+              </div>
+
+              <p class="sample-disclaimer">
+                Architecture concept. Add your own implementation
+                details only if you have built or tested the solution.
+              </p>
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 4: COMMUNICATION AUTOMATION -->
+
+          <article class="project-card card reveal">
+
+            <div class="project-visual">
+
+              <div class="browser-bar">
+                <span class="browser-dot"></span>
+                <span class="browser-dot"></span>
+                <span class="browser-dot"></span>
+                <span class="browser-title">
+                  Communication Automation / Concept
+                </span>
+              </div>
+
+              <div class="workflow">
+
+                <div class="workflow-node">
+                  <span>Business</span>
+                  <span>Event</span>
+                </div>
+
+                <span class="workflow-arrow">→</span>
+
+                <div class="workflow-node">
+                  <span>Routing &</span>
+                  <span>Rules</span>
+                </div>
+
+                <span class="workflow-arrow">→</span>
+
+                <div class="workflow-node">
+                  <span>SMS /</span>
+                  <span>WhatsApp</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="project-content">
+              <h3>Communication Automation</h3>
+              <p>
+                A conceptual workflow for routing business events to
+                appropriate communication channels, with a focus on
+                consistent processes and clear message delivery.
+              </p>
+
+              <div class="tag-list">
+                <span class="tag">Messaging</span>
+                <span class="tag">Automation</span>
+                <span class="tag">Process Design</span>
+              </div>
+
+              <p class="sample-disclaimer">
+                Conceptual example. No live messaging connection
+                or delivery performance is claimed.
+              </p>
+            </div>
+
+          </article>
+
         </div>
-        <div class="skill-item">
-          <div class="skill-name"><span>Customer Support Metrics</span><span>Core focus</span></div>
-          <div class="skill-track"><div class="skill-fill" style="width:80%"></div></div>
+
+      </div>
+    </section>
+
+
+    <!-- =================================================
+         FREELANCE SERVICES
+         Secondary to career profile.
+    ================================================== -->
+
+    <section class="section" id="services">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">Additional Project Interests</span>
+          <h2>
+            Integration & <span class="gradient-text">Automation.</span>
+          </h2>
+          <p class="section-description">
+            Alongside career opportunities, I’m open to discussing
+            suitable freelance projects involving business communication,
+            system connectivity, and process automation.
+          </p>
         </div>
-        <div class="skill-item">
-          <div class="skill-name"><span>Workflow Design</span><span>Core focus</span></div>
-          <div class="skill-track"><div class="skill-fill" style="width:78%"></div></div>
+
+
+        <div class="services-grid">
+
+          <article class="service-card card reveal">
+            <div class="icon" aria-hidden="true">☎</div>
+            <h3>Cloud Calling & Telephony</h3>
+            <p>
+              Integration concepts for business calling, customer
+              communication flows, call events, and related systems.
+            </p>
+          </article>
+
+
+          <article class="service-card card reveal">
+            <div class="icon" aria-hidden="true">◉</div>
+            <h3>WhatsApp Business API</h3>
+            <p>
+              Business messaging workflows, notification use cases,
+              customer communication, and application connectivity.
+            </p>
+          </article>
+
+
+          <article class="service-card card reveal">
+            <div class="icon" aria-hidden="true">✉</div>
+            <h3>SMS & RCS Messaging</h3>
+            <p>
+              Messaging workflow concepts for notifications,
+              customer updates, and business communication journeys.
+            </p>
+          </article>
+
+
+          <article class="service-card card reveal">
+            <div class="icon" aria-hidden="true">⌘</div>
+            <h3>API & Webhook Integration</h3>
+            <p>
+              Connecting compatible services and applications using
+              APIs, event callbacks, and structured data exchanges.
+            </p>
+          </article>
+
+
+          <article class="service-card card reveal">
+            <div class="icon" aria-hidden="true">▥</div>
+            <h3>CRM & Customer Workflows</h3>
+            <p>
+              Exploring ways to organize customer data, communication
+              activity, follow-ups, and business process handoffs.
+            </p>
+          </article>
+
+
+          <article class="service-card card reveal">
+            <div class="icon" aria-hidden="true">↯</div>
+            <h3>Business Process Automation</h3>
+            <p>
+              Identifying repeatable processes and opportunities
+              to reduce manual steps through suitable integrations.
+            </p>
+          </article>
+
         </div>
-        <p class="caveat">Edit these labels and bars to match your genuine experience and technical proficiency.</p>
-      </article>
-    </div>
-  </div>
-</section>
 
-<!-- CONTACT -->
-<section class="section" id="contact">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">LET'S CONNECT</p>
-      <h2>Have a project in mind? <span class="accent">Let's talk.</span></h2>
-      <p>Interested in analytics, process improvement, customer operations, or automation?</p>
-      <div class="section-line"></div>
-    </div>
 
-    <div class="contact-panel reveal">
-      <div>
-        <p class="eyebrow">CONTACT & COLLABORATION</p>
-        <h3>Let's make work simpler.</h3>
-        <p>
-          Reach out to discuss a project, collaboration, or professional opportunity.
-          Replace the example contact details below with your real information.
-        </p>
+        <div class="service-note reveal">
+          <strong>Project approach:</strong>
+          Every engagement should begin with a clear scope,
+          technical requirements, platform access, and an agreed
+          delivery plan. Specific implementations depend on the
+          selected platform, API access, and project requirements.
+        </div>
 
-        <div class="contact-links">
-          <!-- IMPORTANT: Replace with your actual email address. -->
-          <a class="contact-link" id="emailLink" href="mailto:your.email@example.com">
-            <b>✉</b><span>your.email@example.com</span>
-          </a>
-          <!-- IMPORTANT: Replace with your actual LinkedIn URL. -->
-          <a class="contact-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
-            <b>in</b><span>Connect on LinkedIn</span>
-          </a>
-          <a class="contact-link" href="#projects">
-            <b>↗</b><span>Explore portfolio concepts</span>
-          </a>
+      </div>
+    </section>
+
+
+    <!-- =================================================
+         WORK APPROACH
+    ================================================== -->
+
+    <section class="section section-alt" id="approach">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">How I Approach Problems</span>
+          <h2>
+            From requirement to
+            <span class="gradient-text">solution.</span>
+          </h2>
+          <p class="section-description">
+            A straightforward approach to understanding needs,
+            planning integrations, and evaluating results.
+          </p>
+        </div>
+
+
+        <div class="approach-grid">
+
+          <article class="approach-card card reveal">
+            <span class="approach-number">01</span>
+            <h3>Understand</h3>
+            <p>
+              Clarify the problem, requirements, stakeholders,
+              and expected outcome.
+            </p>
+          </article>
+
+          <article class="approach-card card reveal">
+            <span class="approach-number">02</span>
+            <h3>Plan</h3>
+            <p>
+              Identify suitable systems, data flows, dependencies,
+              and possible constraints.
+            </p>
+          </article>
+
+          <article class="approach-card card reveal">
+            <span class="approach-number">03</span>
+            <h3>Integrate</h3>
+            <p>
+              Implement or coordinate the appropriate solution
+              within the agreed scope.
+            </p>
+          </article>
+
+          <article class="approach-card card reveal">
+            <span class="approach-number">04</span>
+            <h3>Validate</h3>
+            <p>
+              Test expected behavior, document findings,
+              and identify follow-up improvements.
+            </p>
+          </article>
+
         </div>
       </div>
+    </section>
 
-      <form class="contact-form" id="contactForm">
-        <label>
-          Your name
-          <input id="visitorName" name="name" type="text" placeholder="Enter your name" required>
-        </label>
 
-        <label>
-          Your email
-          <input id="visitorEmail" name="email" type="email" placeholder="you@example.com" required>
-        </label>
+    <!-- =================================================
+         CONTACT
+    ================================================== -->
 
-        <label>
-          How can I help?
-          <textarea id="visitorMessage" name="message" placeholder="Tell me a little about your project..." required></textarea>
-        </label>
+    <section class="section" id="contact">
+      <div class="container">
 
-        <button class="btn btn-primary" type="submit">Prepare Email Message ↗</button>
-        <p class="form-note muted">
-          This form opens your email application. It does not send or store messages on a server.
-        </p>
-      </form>
+        <div class="section-heading reveal">
+          <span class="eyebrow">Get in Touch</span>
+          <h2>
+            Let's start a
+            <span class="gradient-text">conversation.</span>
+          </h2>
+          <p class="section-description">
+            I’m interested in relevant career opportunities,
+            professional networking, and suitable technical projects.
+          </p>
+        </div>
+
+
+        <div class="contact-grid">
+
+          <div class="contact-copy reveal">
+
+            <h3>Connect with me</h3>
+
+            <p>
+              If you have a relevant opportunity, would like to
+              discuss a role, or have a project that fits my areas
+              of interest, feel free to reach out.
+            </p>
+
+            <div class="contact-methods">
+
+              <a
+                class="contact-method"
+                id="emailContactLink"
+                href="mailto:your.email@example.com"
+              >
+                <span class="icon" aria-hidden="true">✉</span>
+                <span>
+                  <small>Email</small>
+                  <strong id="emailContactText">
+                    your.email@example.com
+                  </strong>
+                </span>
+              </a>
+
+
+              <a
+                class="contact-method"
+                id="linkedinContactLink"
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="icon" aria-hidden="true">in</span>
+                <span>
+                  <small>Professional networking</small>
+                  <strong>LinkedIn Profile ↗</strong>
+                </span>
+              </a>
+
+
+              <div class="contact-method">
+                <span class="icon" aria-hidden="true">◎</span>
+                <span>
+                  <small>Discussion topics</small>
+                  <strong>Career opportunities & technical projects</strong>
+                </span>
+              </div>
+
+            </div>
+          </div>
+
+
+          <form class="contact-form card reveal" id="contactForm">
+
+            <h3>Send an enquiry</h3>
+
+            <div class="form-group">
+              <label for="visitorName">Your name</label>
+              <input
+                id="visitorName"
+                name="visitorName"
+                type="text"
+                placeholder="Enter your name"
+                autocomplete="name"
+                required
+              >
+            </div>
+
+
+            <div class="form-group">
+              <label for="visitorEmail">Your email</label>
+              <input
+                id="visitorEmail"
+                name="visitorEmail"
+                type="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+              >
+            </div>
+
+
+            <div class="form-group">
+              <label for="enquiryType">Reason for contact</label>
+
+              <select id="enquiryType" name="enquiryType" required>
+                <option value="">Select an option</option>
+                <option value="Career opportunity">
+                  Career opportunity
+                </option>
+                <option value="Professional networking">
+                  Professional networking
+                </option>
+                <option value="Freelance project">
+                  Freelance project
+                </option>
+                <option value="Technical discussion">
+                  Technical discussion
+                </option>
+                <option value="Other enquiry">
+                  Other enquiry
+                </option>
+              </select>
+            </div>
+
+
+            <div class="form-group">
+              <label for="visitorMessage">Message</label>
+
+              <textarea
+                id="visitorMessage"
+                name="visitorMessage"
+                placeholder="Tell me a little about your opportunity or project..."
+                required
+              ></textarea>
+            </div>
+
+
+            <button class="btn btn-primary" type="submit">
+              Prepare Email <span>↗</span>
+            </button>
+
+            <p class="form-help">
+              This form opens your default email application.
+              It does not submit information to a server.
+            </p>
+
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ===================================================
+       FOOTER
+  ==================================================== -->
+
+  <footer class="footer">
+    <div class="container footer-row">
+
+      <p>
+        © <span id="currentYear"></span> Kannan Reddy.
+        Professional portfolio.
+      </p>
+
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+
     </div>
-  </div>
-</section>
+  </footer>
 
-</main>
 
-<!-- FOOTER -->
-<footer>
-  <div class="container footer-inner">
-    <a class="brand" href="#home">
-      <span class="brand-mark" style="width:34px;height:34px;border-radius:10px;font-size:13px">KR</span>
-      <span style="font-size:12px">KANNAN REDDY<small>TECHNOLOGY & AUTOMATION</small></span>
-    </a>
+  <button
+    class="back-to-top"
+    id="backToTop"
+    type="button"
+    aria-label="Back to top"
+    title="Back to top"
+  >
+    ↑
+  </button>
 
-    <p>© <span id="year"></span> Kannan Reddy. Built with purpose.</p>
 
-    <div class="footer-links">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-      <button id="printBtn" class="btn btn-secondary" type="button" style="padding:7px 10px;font-size:10px">Print / Save PDF</button>
-    </div>
-  </div>
-</footer>
+  <!-- ===================================================
+       JAVASCRIPT
+  ==================================================== -->
 
-<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+  <script>
+    "use strict";
 
-<script>
-"use strict";
+    /* =================================================
+       1. PERSONAL SETTINGS
+       Update these values before publishing.
+    ================================================== */
 
-/* Mobile navigation */
-const menuBtn = document.getElementById("menuBtn");
-const navLinks = document.getElementById("navLinks");
+    const PORTFOLIO_CONFIG = {
+      name: "Kannan Reddy",
 
-menuBtn.addEventListener("click", () => {
-  const isOpen = navLinks.classList.toggle("open");
-  menuBtn.setAttribute("aria-expanded", String(isOpen));
-  menuBtn.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
-  menuBtn.textContent = isOpen ? "✕" : "☰";
-});
+      /*
+       * The original photo URL is tried first.
+       * If it cannot load, the page switches to a
+       * locally generated fallback avatar.
+       */
+      profileImage:
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjemWniCBrN0NfSouXL3whANZPD2dcoAVjT0Yc71v6opKJLlPoMQVmolRaxIoFckWN_6IOw5FR8uzugCuQ0EaedwhDoiB7Gf3XFzv0xI8OqYxJzavoWyyoj3T_g8IO1ZETbdHOrz7IFl2N9hg2HIQG1ac4IxswtCUNMUbkZuvST1vRv40D6FFC30we7wccS/s200/1000102143.png",
 
-navLinks.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    menuBtn.setAttribute("aria-expanded", "false");
-    menuBtn.setAttribute("aria-label", "Open navigation");
-    menuBtn.textContent = "☰";
-  });
-});
+      /*
+       * Replace with your real email address.
+       * The form uses this address to prepare an email.
+       */
+      email: "your.email@example.com",
 
-/* Scroll reveal with accessible fallback */
-const revealItems = document.querySelectorAll(".reveal");
+      /*
+       * Replace with your real LinkedIn profile URL.
+       */
+      linkedin: "https://www.linkedin.com/"
+    };
 
-if ("IntersectionObserver" in window) {
-  const revealObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        revealObserver.unobserve(entry.target);
+
+    /* =================================================
+       2. PROFILE IMAGE: ROBUST LOADING AND FALLBACK
+    ================================================== */
+
+    function createFallbackAvatar(initials) {
+      const safeInitials = String(initials || "KR")
+        .replace(/[^a-zA-Z0-9 ]/g, "")
+        .slice(0, 3);
+
+      const svg = `
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="400"
+          height="400"
+          viewBox="0 0 400 400"
+        >
+          <defs>
+            <linearGradient
+              id="background"
+              x1="0"
+              y1="0"
+              x2="1"
+              y2="1"
+            >
+              <stop offset="0%" stop-color="#263f70"/>
+              <stop offset="100%" stop-color="#10182b"/>
+            </linearGradient>
+
+            <linearGradient
+              id="accent"
+              x1="0"
+              y1="0"
+              x2="1"
+              y2="1"
+            >
+              <stop offset="0%" stop-color="#8bb4ff"/>
+              <stop offset="100%" stop-color="#4de3e8"/>
+            </linearGradient>
+          </defs>
+
+          <rect
+            width="400"
+            height="400"
+            rx="35"
+            fill="url(#background)"
+          />
+
+          <circle
+            cx="325"
+            cy="65"
+            r="100"
+            fill="#4de3e8"
+            opacity=".08"
+          />
+
+          <circle
+            cx="75"
+            cy="350"
+            r="120"
+            fill="#5b8cff"
+            opacity=".12"
+          />
+
+          <rect
+            x="35"
+            y="35"
+            width="330"
+            height="330"
+            rx="28"
+            fill="none"
+            stroke="url(#accent)"
+            stroke-opacity=".3"
+            stroke-width="2"
+          />
+
+          <text
+            x="200"
+            y="225"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="${safeInitials.length > 2 ? 76 : 110}"
+            font-weight="700"
+            text-anchor="middle"
+            fill="url(#accent)"
+          >${safeInitials}</text>
+
+          <text
+            x="200"
+            y="275"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="17"
+            letter-spacing="4"
+            text-anchor="middle"
+            fill="#c6d8f5"
+          >PORTFOLIO</text>
+        </svg>
+      `;
+
+      return "data:image/svg+xml;charset=UTF-8," +
+        encodeURIComponent(svg);
+    }
+
+
+    function setupProfileImage() {
+      const image = document.getElementById("heroProfileImage");
+      const fallback = document.getElementById("heroProfileFallback");
+
+      if (!image || !fallback) {
+        return;
       }
-    });
-  }, { threshold: 0.12 });
 
-  revealItems.forEach(item => revealObserver.observe(item));
-} else {
-  revealItems.forEach(item => item.classList.add("visible"));
-}
+      let fallbackShown = false;
 
-/* Back-to-top button */
-const backTop = document.getElementById("backTop");
+      function showFallback() {
+        if (fallbackShown) {
+          return;
+        }
 
-window.addEventListener("scroll", () => {
-  backTop.classList.toggle("show", window.scrollY > 500);
-}, { passive: true });
+        fallbackShown = true;
 
-backTop.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+        image.style.display = "none";
+        fallback.style.display = "grid";
 
-/* Current year */
-document.getElementById("year").textContent = new Date().getFullYear();
+        /*
+         * A generated SVG is embedded directly in the page.
+         * It does not depend on another website or image host.
+         */
+        fallback.style.backgroundImage =
+          `url("${createFallbackAvatar("KR")}")`;
 
-/* Contact form: prepares an email using the visitor's email application.
-   Replace the placeholder recipient below with your real email address. */
-const CONTACT_EMAIL = "your.email@example.com";
+        fallback.style.backgroundSize = "cover";
+        fallback.style.backgroundPosition = "center";
+        fallback.textContent = "";
+      }
 
-document.getElementById("contactForm").addEventListener("submit", event => {
-  event.preventDefault();
+      image.addEventListener("error", showFallback);
 
-  const name = document.getElementById("visitorName").value.trim();
-  const email = document.getElementById("visitorEmail").value.trim();
-  const message = document.getElementById("visitorMessage").value.trim();
+      image.addEventListener("load", function () {
+        if (!fallbackShown) {
+          image.style.display = "block";
+          fallback.style.display = "none";
+        }
+      });
 
-  if (!name || !email || !message) {
-    alert("Please complete all fields.");
-    return;
-  }
+      /*
+       * Set the image after registering the error listener
+       * so the failure can be handled reliably.
+       */
+      image.src = PORTFOLIO_CONFIG.profileImage;
 
-  if (CONTACT_EMAIL === "your.email@example.com") {
-    alert("Please update CONTACT_EMAIL in the code with your real email address before using the contact form.");
-    return;
-  }
+      /*
+       * Handle images that have already finished loading
+       * before the load/error handler runs.
+       */
+      if (image.complete) {
+        if (image.naturalWidth === 0) {
+          showFallback();
+        } else {
+          image.style.display = "block";
+          fallback.style.display = "none";
+        }
+      }
+    }
 
-  const subject = encodeURIComponent("Portfolio inquiry from " + name);
-  const body = encodeURIComponent(
-    "Name: " + name + "\n" +
-    "Email: " + email + "\n\n" +
-    "Message:\n" + message
-  );
 
-  window.location.href =
-    "mailto:" + CONTACT_EMAIL + "?subject=" + subject + "&body=" + body;
-});
+    /* =================================================
+       3. MOBILE NAVIGATION
+    ================================================== */
 
-/* Print or save as PDF */
-document.getElementById("printBtn").addEventListener("click", () => {
-  window.print();
-});
+    function setupNavigation() {
+      const menuToggle = document.getElementById("menuToggle");
+      const navLinks = document.getElementById("navLinks");
 
-/* Highlight the active navigation section */
-const sections = document.querySelectorAll("main section[id]");
-if ("IntersectionObserver" in window) {
-  const sectionObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        navLinks.querySelectorAll("a").forEach(link => {
-          link.classList.toggle(
-            "active",
-            link.getAttribute("href") === "#" + entry.target.id
-          );
+      if (!menuToggle || !navLinks) {
+        return;
+      }
+
+      function closeMenu() {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation");
+        menuToggle.textContent = "☰";
+      }
+
+      menuToggle.addEventListener("click", function () {
+        const isOpen = navLinks.classList.toggle("open");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          String(isOpen)
+        );
+
+        menuToggle.setAttribute(
+          "aria-label",
+          isOpen ? "Close navigation" : "Open navigation"
+        );
+
+        menuToggle.textContent = isOpen ? "✕" : "☰";
+      });
+
+      navLinks.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", closeMenu);
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeMenu();
+        }
+      });
+
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 850) {
+          closeMenu();
+        }
+      });
+    }
+
+
+    /* =================================================
+       4. REVEAL ANIMATIONS
+    ================================================== */
+
+    function setupRevealAnimations() {
+      const revealElements = document.querySelectorAll(".reveal");
+
+      /*
+       * If IntersectionObserver is unavailable, content
+       * stays visible. The page must never hide content
+       * because an animation feature is unsupported.
+       */
+      if (!("IntersectionObserver" in window)) {
+        return;
+      }
+
+      document.documentElement.classList.add("js-ready");
+
+      const observer = new IntersectionObserver(
+        function (entries, currentObserver) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              currentObserver.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.08,
+          rootMargin: "0px 0px -25px 0px"
+        }
+      );
+
+      revealElements.forEach(function (element) {
+        observer.observe(element);
+      });
+
+      /*
+       * A safety check ensures that items near the initial
+       * viewport are visible after the page is laid out.
+       */
+      window.setTimeout(function () {
+        revealElements.forEach(function (element) {
+          const rect = element.getBoundingClientRect();
+
+          if (
+            rect.top < window.innerHeight &&
+            rect.bottom > 0
+          ) {
+            element.classList.add("is-visible");
+          }
         });
-      }
-    });
-  }, { rootMargin: "-25% 0px -65% 0px" });
+      }, 500);
+    }
 
-  sections.forEach(section => sectionObserver.observe(section));
-}
-</script>
+
+    /* =================================================
+       5. CONTACT DETAILS
+    ================================================== */
+
+    function setupContactDetails() {
+      const emailLink = document.getElementById("emailContactLink");
+      const emailText = document.getElementById("emailContactText");
+      const linkedinLink = document.getElementById("linkedinContactLink");
+
+      if (emailLink && emailText) {
+        emailText.textContent = PORTFOLIO_CONFIG.email;
+        emailLink.href = "mailto:" + PORTFOLIO_CONFIG.email;
+      }
+
+      if (linkedinLink) {
+        linkedinLink.href = PORTFOLIO_CONFIG.linkedin;
+      }
+    }
+
+
+    /* =================================================
+       6. CONTACT FORM
+       This creates an email draft; it does not store data.
+    ================================================== */
+
+    function setupContactForm() {
+      const form = document.getElementById("contactForm");
+
+      if (!form) {
+        return;
+      }
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const visitorName =
+          document.getElementById("visitorName").value.trim();
+
+        const visitorEmail =
+          document.getElementById("visitorEmail").value.trim();
+
+        const enquiryType =
+          document.getElementById("enquiryType").value;
+
+        const visitorMessage =
+          document.getElementById("visitorMessage").value.trim();
+
+        if (
+          !visitorName ||
+          !visitorEmail ||
+          !enquiryType ||
+          !visitorMessage
+        ) {
+          alert("Please complete all fields before continuing.");
+          return;
+        }
+
+        if (PORTFOLIO_CONFIG.email === "your.email@example.com") {
+          alert(
+            "Please update the email address in PORTFOLIO_CONFIG " +
+            "before using the contact form."
+          );
+          return;
+        }
+
+        const subject =
+          encodeURIComponent(
+            enquiryType + " — Portfolio enquiry from " + visitorName
+          );
+
+        const body = encodeURIComponent(
+          "Hello Kannan,\n\n" +
+          "Name: " + visitorName + "\n" +
+          "Email: " + visitorEmail + "\n" +
+          "Enquiry type: " + enquiryType + "\n\n" +
+          "Message:\n" + visitorMessage + "\n\n" +
+          "Sent through your portfolio contact form."
+        );
+
+        const mailtoUrl =
+          "mailto:" + PORTFOLIO_CONFIG.email +
+          "?subject=" + subject +
+          "&body=" + body;
+
+        window.location.href = mailtoUrl;
+      });
+    }
+
+
+    /* =================================================
+       7. FOOTER YEAR
+    ================================================== */
+
+    function setupFooterYear() {
+      const year = document.getElementById("currentYear");
+
+      if (year) {
+        year.textContent = new Date().getFullYear();
+      }
+    }
+
+
+    /* =================================================
+       8. BACK-TO-TOP BUTTON
+    ================================================== */
+
+    function setupBackToTop() {
+      const button = document.getElementById("backToTop");
+
+      if (!button) {
+        return;
+      }
+
+      function updateButton() {
+        if (window.scrollY > 450) {
+          button.classList.add("visible");
+        } else {
+          button.classList.remove("visible");
+        }
+      }
+
+      window.addEventListener("scroll", updateButton, {
+        passive: true
+      });
+
+      button.addEventListener("click", function () {
+        window.scrollTo({
+          top: 0,
+          behavior: window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+          ).matches ? "auto" : "smooth"
+        });
+      });
+
+      updateButton();
+    }
+
+
+    /* =================================================
+       9. ACTIVE NAVIGATION LINK
+    ================================================== */
+
+    function setupActiveNavigation() {
+      const sections = document.querySelectorAll("main section[id]");
+      const links = document.querySelectorAll(".nav-links a[href^='#']");
+
+      if (!("IntersectionObserver" in window)) {
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            const currentId = entry.target.id;
+
+            links.forEach(function (link) {
+              const isActive =
+                link.getAttribute("href") === "#" + currentId;
+
+              link.classList.toggle("active", isActive);
+            });
+          });
+        },
+        {
+          rootMargin: "-25% 0px -60% 0px",
+          threshold: 0
+        }
+      );
+
+      sections.forEach(function (section) {
+        observer.observe(section);
+      });
+    }
+
+
+    /* =================================================
+       10. INITIALIZE PAGE
+    ================================================== */
+
+    document.addEventListener("DOMContentLoaded", function () {
+      setupProfileImage();
+      setupNavigation();
+      setupRevealAnimations();
+      setupContactDetails();
+      setupContactForm();
+      setupFooterYear();
+      setupBackToTop();
+      setupActiveNavigation();
+    });
+
+  </script>
 
 </body>
 </html>
